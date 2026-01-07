@@ -1,0 +1,47 @@
+.Main {
+  padding-top: 30px;
+}
+
+.Main .addProduct {
+  height: 50px;
+  width: 200px;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 16pt;
+}
+
+.Main .section_header {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.Main .prodGrid {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px 200px 30px 200px;
+  column-gap: 115px;
+  row-gap: 70px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .Main .prodGrid {
+    min-height: calc(100vh - 160px - 50px);
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 426px) {
+  .Main .prodGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

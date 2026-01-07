@@ -1,0 +1,41 @@
+.Product {
+  width: 250px;
+  height: 400px;
+  box-shadow: 0 0 5px 5px #dfdfdf;
+  margin: auto;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.Product img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.Product h1 {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Product p {
+  width: 100%;
+  height: 50px;
+  line-height: 20px;
+}
+
+.Product button {
+  width: 100%;
+  height: 50px;
+  background-color: #a1d8f8;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Product button:hover {
+  background-color: rgb(71, 187, 255);
+}

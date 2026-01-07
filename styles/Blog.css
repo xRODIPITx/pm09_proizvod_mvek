@@ -1,0 +1,45 @@
+.blog-posts {
+  margin-top: 30px;
+}
+
+.blog-post {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.blog-post h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.blog-post p {
+  font-size: 16px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.blog-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.blog-link a {
+  font-size: 16px;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.blog-link a:hover {
+  text-decoration: underline;
+}
