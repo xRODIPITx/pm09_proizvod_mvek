@@ -1,6 +1,6 @@
 import UserBox from "./UserBox";
 
-function Header({ setPage, setModalBox, token, setToken }) {
+export default function Header({ setPage, setModalBox, token, setToken }) {
   function Cart() {
     if (token !== null && token !== undefined) {
       return <li onClick={() => setPage("Cart")}>Корзина</li>;
@@ -11,6 +11,7 @@ function Header({ setPage, setModalBox, token, setToken }) {
     <div className="Header">
       <ul>
         <li onClick={() => setPage("Main")}>Главная</li>
+        <li onClick={() => setPage("Blog")}>Блог</li>
         <Cart />
       </ul>
       <UserBox
@@ -22,5 +23,3 @@ function Header({ setPage, setModalBox, token, setToken }) {
     </div>
   );
 }
-
-export default Header;

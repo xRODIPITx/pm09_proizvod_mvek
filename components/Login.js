@@ -36,16 +36,16 @@ function Login({ setModalBox, setMessage, setToken }) {
     setTimeout(() => {
       setMessage(message);
       setModalBox("MessageBox");
-    }, 200);
+    }, 100);
   }
 
   return (
-    <div>
+    <>
       <h1>Логин</h1>
       <input id="login" type="text" placeholder="Логин" />
       <input id="password" type="password" placeholder="Пароль" />
       <button onClick={Log}>Войти</button>
-    </div>
+    </>
   );
 }
 

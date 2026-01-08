@@ -10,6 +10,7 @@ function Main({
   token,
   setModalBox,
   setMessage,
+  setPage,
 }) {
   const [products, setProducts] = useState([]);
   const [posts, setPosts] = useState([]);
@@ -92,8 +93,8 @@ function Main({
           <div key={post._id} className="blog-post">
             <h3>{post.title}</h3>
             <p>{post.content.substring(0, 150)}...</p>
-            <Link href={`/blog/${post._id}`}>
-              <a className="read-more">Читать дальше</a>
+            <Link href={`/blog/${post._id}`} className="read-more">
+              Читать дальше
             </Link>
           </div>
         ))}
@@ -101,7 +102,7 @@ function Main({
 
       {/* Ссылка на полную страницу блога */}
       <div className="blog-link">
-        <Link href="/blog">Посмотреть все статьи</Link>
+        <li onClick={() => setPage("Blog")}>Посмотреть все статьи</li>
       </div>
     </div>
   );

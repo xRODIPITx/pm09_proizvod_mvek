@@ -16,10 +16,13 @@
   list-style: none;
   line-height: 50px;
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
 .Header li:hover {
   background-color: rgb(71, 187, 255);
+  text-decoration: none;
 }
 
 @media (max-width: 426px) {

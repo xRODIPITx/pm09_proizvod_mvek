@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Blog = () => {
+const Blog = ({ token, setModalBox, setMessage }) => {
   const [posts, setPosts] = useState([]);
+  console.log("setModalBox:", setModalBox);
 
   useEffect(() => {
     // Запрашиваем все статьи для страницы блога
@@ -15,16 +16,36 @@ const Blog = () => {
     fetchPosts();
   }, []);
 
+  function AddBlogPost() {
+    if (token !== null) {
+      return (
+        <>
+          <button
+            className="addButton"
+            onClick={() => setModalBox("BlogPostAdd")}
+          >
+            Добавить блог
+          </button>
+        </>
+      );
+    }
+  }
+
   return (
     <div className="blog-section">
-      <h1>Блог</h1>
+      <h1 className="section_header">Блог</h1>
+      <AddBlogPost
+        token={token}
+        setModalBox={setModalBox}
+        setMessage={setMessage}
+      />
       <div className="blog-posts">
         {posts.map((post) => (
           <div key={post._id} className="blog-post">
             <h3>{post.title}</h3>
             <p>{post.content.substring(0, 150)}...</p>
-            <Link href={`/blog/${post._id}`}>
-              <a className="read-more">Читать дальше</a>
+            <Link href={`/blog/${post._id}`} className="read-more">
+              Читать дальше
             </Link>
           </div>
         ))}

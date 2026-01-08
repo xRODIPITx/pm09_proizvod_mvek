@@ -1,7 +1,7 @@
-function ProductAdd({ setModalBox, setMessage, token }) {
-  function AddProduct() {
-    const header = document.getElementById("header").value;
-    const price = document.getElementById("price").value;
+function BlogPostAdd({ setModalBox, setMessage, token }) {
+  function AddBlogPost() {
+    const title = document.getElementById("title").value;
+    const content = document.getElementById("content").value;
 
     let message;
 
@@ -12,11 +12,11 @@ function ProductAdd({ setModalBox, setMessage, token }) {
     }
 
     const data = {
-      header: header,
-      price: price,
+      title,
+      content,
     };
 
-    const api = "/api/products/add";
+    const api = "/api/blog";
 
     fetch(api, {
       method: "POST",
@@ -36,15 +36,15 @@ function ProductAdd({ setModalBox, setMessage, token }) {
 
   return (
     <>
-      <h1>Добавить товар</h1>
-      <input id="header" placeholder="Наименование" type="text" />
-      <input id="price" placeholder="Стоимость" type="number" />
-      <button id="send" onClick={() => AddProduct()}>
-        Добавить
+      <h1>Добавить пост</h1>
+      <input id="title" placeholder="Заголовок поста" type="text" />
+      <input id="content" placeholder="Содержимое поста" type="text" />
+      <button id="send" onClick={() => AddBlogPost()}>
+        Создать
       </button>
       <p id="addProductError"></p>
     </>
   );
 }
 
-export default ProductAdd;
+export default BlogPostAdd;

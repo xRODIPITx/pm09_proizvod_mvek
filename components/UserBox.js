@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 
-function UserBox({ setPage, setModalBox, setToken, token }) {
+export default function UserBox({ setPage, setModalBox, setToken, token }) {
   function signOut() {
     if (typeof window !== "undefined") {
       setToken(null);
@@ -34,5 +34,3 @@ function UserBox({ setPage, setModalBox, setToken, token }) {
 
   return <LoginPanel />;
 }
-
-export default UserBox;
