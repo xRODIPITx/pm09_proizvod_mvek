@@ -102,7 +102,7 @@ function Main({
 
       {/* Ссылка на полную страницу блога */}
       <div className="blog-link">
-        <li onClick={() => setPage("Blog")}>Посмотреть все статьи</li>
+        <Link href="/blog">Посмотреть все статьи</Link>
       </div>
     </div>
   );

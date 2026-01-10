@@ -25,6 +25,11 @@
   text-decoration: none;
 }
 
+ul a {
+  text-decoration: none;
+  color: #000;
+}
+
 @media (max-width: 426px) {
   .Header ul,
   .Header {

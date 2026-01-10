@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Main from "../views/Main";
 import Cart from "../views/Cart";
 import Cabinet from "../views/Cabinet.js";
-import Blog from "../views/Blog";
+import Blog from "./blog/index.js";
 
 export default function HomePage({ token, setToken, setModalBox, setMessage }) {
   const [page, setPage] = useState("Main");

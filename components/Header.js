@@ -1,4 +1,5 @@
 import UserBox from "./UserBox";
+import Link from "next/link";
 
 export default function Header({ setPage, setModalBox, token, setToken }) {
   function Cart() {
@@ -11,7 +12,9 @@ export default function Header({ setPage, setModalBox, token, setToken }) {
     <div className="Header">
       <ul>
         <li onClick={() => setPage("Main")}>Главная</li>
-        <li onClick={() => setPage("Blog")}>Блог</li>
+        <Link href="/blog">
+          <li>Блог</li>
+        </Link>
         <Cart />
       </ul>
       <UserBox

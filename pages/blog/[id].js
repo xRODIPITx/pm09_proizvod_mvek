@@ -1,26 +1,28 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-const PostPage = ({ query }) => {
+export default function BlogPost() {
+  const router = useRouter();
+  const { id } = router.query;
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const fetchPost = async () => {
-      const res = await fetch(`/api/blog/${query.id}`);
-      const data = await res.json();
-      setPost(data);
-    };
+    if (!id) return; // ждём пока id появится
 
-    fetchPost();
-  }, [query.id]);
+    fetch(`/api/blog?id=${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("DATA:", data);
+        setPost(data.data);
+      });
+  }, [id]);
 
-  if (!post) return <div>Загрузка...</div>;
+  if (!id || !post) return <p>Загрузка...</p>;
 
   return (
     <div>
       <h1>{post.title}</h1>
-      <div>{post.content}</div>
+      <p>{post.content}</p>
     </div>
   );
-};
-
-export default PostPage;
+}

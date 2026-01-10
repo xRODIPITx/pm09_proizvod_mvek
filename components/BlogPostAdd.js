@@ -5,9 +5,9 @@ function BlogPostAdd({ setModalBox, setMessage, token }) {
 
     let message;
 
-    if (header.length === 0) {
+    if (title.length === 0 || content.length === 0) {
       document.getElementById("addProductError").innerText =
-        "Данные введены неправильно";
+        "Поля обязательны для заполнения";
       return;
     }
 
@@ -37,8 +37,18 @@ function BlogPostAdd({ setModalBox, setMessage, token }) {
   return (
     <>
       <h1>Добавить пост</h1>
-      <input id="title" placeholder="Заголовок поста" type="text" />
-      <input id="content" placeholder="Содержимое поста" type="text" />
+      <input
+        id="title"
+        placeholder="Заголовок поста"
+        type="text"
+        minlength="4"
+      />
+      <input
+        id="content"
+        placeholder="Содержимое поста"
+        type="text"
+        minlength="10"
+      />
       <button id="send" onClick={() => AddBlogPost()}>
         Создать
       </button>

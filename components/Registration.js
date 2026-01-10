@@ -52,12 +52,14 @@ function Registration({ setModalBox, setMessage }) {
         type="text"
         placeholder="Логин (от 3 символов)"
         required
+        minlength="3"
       />
       <input
         id="password"
         type="password"
         placeholder="Пароль (от 4 символов)"
         required
+        minlength="4"
       />
       <input id="email" type="email" placeholder="Адрес почты" required />
       <button onClick={Reg}>Сохранить</button>
