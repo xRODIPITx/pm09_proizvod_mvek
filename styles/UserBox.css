@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  text-align: center;
 }
 
 .UserBox button {
@@ -12,6 +13,7 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  margin: 0 5px 0 5px;
 }
 
 .UserBox button:hover {

@@ -1,28 +1,29 @@
-import UserBox from "./UserBox";
 import Link from "next/link";
 
-export default function Header({ setPage, setModalBox, token, setToken }) {
-  function Cart() {
-    if (token !== null && token !== undefined) {
-      return <li onClick={() => setPage("Cart")}>Корзина</li>;
-    }
-  }
-
+export default function Header({ token, children }) {
   return (
     <div className="Header">
       <ul>
-        <li onClick={() => setPage("Main")}>Главная</li>
-        <Link href="/blog">
-          <li>Блог</li>
-        </Link>
-        <Cart />
+        <li>
+          <Link href="/" className="nav-link">
+            Главная
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog" className="nav-link">
+            Блог
+          </Link>
+        </li>
+        {token && (
+          <li>
+            <Link href="/cart" className="nav-link">
+              Корзина
+            </Link>
+          </li>
+        )}
       </ul>
-      <UserBox
-        setModalBox={setModalBox}
-        token={token}
-        setToken={setToken}
-        setPage={setPage}
-      />
+
+      {children}
     </div>
   );
 }

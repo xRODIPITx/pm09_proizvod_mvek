@@ -1,57 +1,110 @@
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Main from "../views/Main";
-import Cart from "../views/Cart";
-import Cabinet from "../views/Cabinet.js";
-import Blog from "./blog/index.js";
+import Product from "../components/Product";
+import Link from "next/link";
 
-export default function HomePage({ token, setToken, setModalBox, setMessage }) {
-  const [page, setPage] = useState("Main");
-  const [cart, setCart] = useState([]);
-  const [cartPrice, setCartPrice] = useState(0);
-  const [cartQty, setCartQty] = useState(0);
+function Main({
+  setCart,
+  setCartPrice,
+  setCartQty,
+  cart,
+  token,
+  setModalBox,
+  setMessage,
+}) {
+  const [products, setProducts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  const pages = {
-    Main: (
-      <Main
-        setCart={setCart}
-        setCartPrice={setCartPrice}
-        setCartQty={setCartQty}
-        cart={cart}
-        setMessage={setMessage}
-        token={token}
-        setPage={setPage}
-        setModalBox={setModalBox}
-      />
-    ),
-    Cart: (
-      <Cart
-        cart={cart}
-        setCart={setCart}
-        cartPrice={cartPrice}
-        setCartPrice={setCartPrice}
-        cartQty={cartQty}
-        setCartQty={setCartQty}
-        setMessage={setMessage}
-      />
-    ),
-    Cabinet: <Cabinet token={token} />,
-    Blog: (
-      <Blog token={token} setModalBox={setModalBox} setMessage={setMessage} />
-    ),
-  };
+  useEffect(() => {
+    const api = "/api/products";
+    fetch(api, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((result) => result.json())
+      .then((result) => {
+        // console.log(result);
+        setProducts(result.data.slice(0, 5));
+      });
+
+    const fetchPosts = async () => {
+      const res = await fetch("/api/blog?page=home"); // Добавляем параметр page=home
+      const data = await res.json();
+      setPosts(data.data);
+    };
+
+    fetchPosts();
+  }, []);
+
+  function AddProduct() {
+    if (token !== null) {
+      return (
+        <>
+          <button
+            className="addProduct"
+            onClick={() => setModalBox("ProductAdd")}
+          >
+            Добавить товар
+          </button>
+        </>
+      );
+    }
+  }
 
   return (
-    <div className="App">
-      <Header
-        setPage={setPage}
-        token={token}
-        setToken={setToken}
-        setModalBox={setModalBox}
-      />
-      {pages[page]}
-      <Footer />
+    <div className="Main">
+      <div className="banner">
+        <p className="banner_message">
+          Добро пожаловать в наш магазин! Здесь вы найдете все необходимое для
+          пикника и туризма.
+        </p>
+      </div>
+      <AddProduct />
+      <div className="section_header">
+        <h2>Рекомендуемые товары</h2>
+      </div>
+      <div className="prodGrid">
+        {products.map((item) => (
+          <Product
+            key={item._id}
+            id={item._id}
+            header={item.header}
+            image="/images/product.jpg"
+            price={item.price}
+            setCart={setCart}
+            setCartPrice={setCartPrice}
+            setCartQty={setCartQty}
+            cart={cart}
+            token={token}
+            setMessage={setMessage}
+            setModalBox={setModalBox}
+          />
+        ))}
+      </div>
+
+      {/* Добавляем блок с последними статьями */}
+      <div className="section_header">
+        <h2>Последние статьи</h2>
+      </div>
+      <div className="blog-posts">
+        {posts.map((post) => (
+          <div key={post._id} className="blog-post">
+            <h3>{post.title}</h3>
+            <p>{post.content.substring(0, 150)}...</p>
+            <Link href={`/blog/${post._id}`} className="read-more">
+              Читать дальше
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      {/* Ссылка на полную страницу блога */}
+      <div className="blog-link">
+        <Link href="/blog">Посмотреть все статьи</Link>
+      </div>
     </div>
   );
 }
+
+export default Main;

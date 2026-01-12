@@ -1,11 +1,34 @@
+import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 
-function Cabinet({ token }) {
-  function emailChange() {
-    const email = document.getElementById("email").value;
-    const data = { token: token, email: email };
+export default function Cabinet({ token }) {
+  const [localToken, setLocalToken] = useState(token || null);
+  const [email, setEmail] = useState(null);
 
-    const emailRegex = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  useEffect(() => {
+    if (!localToken && typeof window !== "undefined") {
+      const storedToken = localStorage.getItem("token");
+      if (storedToken) setLocalToken(storedToken);
+    }
+  }, [localToken]);
+
+  useEffect(() => {
+    // Декодируем токен, когда он появился
+    if (token && typeof token === "string") {
+      try {
+        const decoded = jwtDecode(token);
+        setEmail(decoded.email);
+      } catch (err) {
+        console.warn("Ошибка декодирования токена:", err);
+      }
+    }
+  }, [token]);
+
+  function emailChange() {
+    const emailValue = document.getElementById("email").value;
+    const data = { token: token, email: emailValue };
+
+    const emailRegex = emailValue.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 
     if (!emailRegex) {
       document.getElementById("errorMessage").innerText =
@@ -54,15 +77,28 @@ function Cabinet({ token }) {
       });
   }
 
+  // Показ до авторизации
+  if (!email) {
+    return (
+      <div className="Cabinet">
+        <h1>Личный кабинет</h1>
+        <p>Вы не авторизованы</p>
+      </div>
+    );
+  }
+
   return (
     <div className="Cabinet">
       <h1>Личный кабинет</h1>
-      <p id="showEmail">Текущий e-mail: {jwtDecode(token).email}</p>
+      <p id="showEmail">Текущий e-mail: {email}</p>
+
       <input id="email" placeholder="Новый Email" type="email" />
       <button id="sendEmail" onClick={emailChange}>
         Сменить почту
       </button>
+
       <p id="errorMessage"></p>
+
       <input
         id="password"
         placeholder="Новый пароль (от 4 символов)"
@@ -71,9 +107,8 @@ function Cabinet({ token }) {
       <button id="sendPassword" onClick={passwordChange}>
         Сменить пароль
       </button>
+
       <p id="errorMessage"></p>
     </div>
   );
 }
-
-export default Cabinet;

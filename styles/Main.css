@@ -1,4 +1,7 @@
 .Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 30px;
 }
 
@@ -8,6 +11,31 @@
   border-style: none;
   border-radius: 10px;
   font-size: 16pt;
+  margin: 10px 0 10px 0;
+}
+
+.banner {
+  background-color: #d1e8d8; /* Светло-зеленый фон, ассоциируется с природой */
+  color: #4a3c31; /* Коричневый цвет текста */
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #a6b89d; /* Бежевый оттенок для границы */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Анимация появления */
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .Main .section_header {

@@ -9,7 +9,6 @@ import "../styles/ModalBox.css";
 import "../styles/Product.css";
 import "../styles/ProductCart.css";
 import "../styles/UserBox.css";
-import "../styles/Banner.css";
 import "../styles/Blog.css";
 
 import { useState, useEffect } from "react";
@@ -19,10 +18,16 @@ import Registration from "../components/Registration";
 import MessageBox from "../components/MessageBox";
 import ProductAdd from "../components/ProductAdd";
 import BlogPostAdd from "../components/BlogPostAdd";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import UserBox from "../components/UserBox";
 
 export default function MyApp({ Component, pageProps }) {
-  const [modalBox, setModalBox] = useState("none");
+  const [cart, setCart] = useState([]);
+  const [cartPrice, setCartPrice] = useState(0);
+  const [cartQty, setCartQty] = useState(0);
   const [message, setMessage] = useState("");
+  const [modalBox, setModalBox] = useState("none");
   const [token, setToken] = useState(null);
 
   useEffect(() => {
@@ -78,14 +83,27 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Header token={token} setToken={setToken} setModalBox={setModalBox}>
+        <UserBox token={token} setToken={setToken} setModalBox={setModalBox} />
+      </Header>
+
       <Component
         {...pageProps}
+        cart={cart}
+        setCart={setCart}
+        cartPrice={cartPrice}
+        setCartPrice={setCartPrice}
+        cartQty={cartQty}
+        setCartQty={setCartQty}
         token={token}
         setToken={setToken}
+        modalBox={modalBox}
         setModalBox={setModalBox}
+        message={message}
         setMessage={setMessage}
       />
       {modalBoxes[modalBox]}
+      <Footer />
     </>
   );
 }

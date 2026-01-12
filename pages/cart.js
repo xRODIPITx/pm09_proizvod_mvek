@@ -1,6 +1,6 @@
 import ProductCart from "../components/ProductCart";
 
-function Cart({
+export default function Cart({
   cart,
   setCart,
   cartPrice,
@@ -53,5 +53,3 @@ function Cart({
     </div>
   );
 }
-
-export default Cart;
