@@ -10,6 +10,11 @@ export default function Header({ token, children }) {
           </Link>
         </li>
         <li>
+          <Link href="/catalog" className="nav-link">
+            Каталог
+          </Link>
+        </li>
+        <li>
           <Link href="/blog" className="nav-link">
             Блог
           </Link>

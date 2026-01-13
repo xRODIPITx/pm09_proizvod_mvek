@@ -33,7 +33,9 @@ const Blog = ({ token, setModalBox, setMessage }) => {
 
   return (
     <div className="blog-section">
-      <h1 className="section_header">Блог</h1>
+      <div className="section-title">
+        <h1>Блог</h1>
+      </div>
       <AddBlogPost
         token={token}
         setModalBox={setModalBox}

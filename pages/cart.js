@@ -32,7 +32,9 @@ export default function Cart({
 
   return (
     <div className="Cart">
-      <h1>Корзина</h1>
+      <div className="section-title">
+        <h1>Корзина</h1>
+      </div>
       <div className="CartContent">
         {cart.map((item) => (
           <ProductCart

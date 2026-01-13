@@ -89,7 +89,9 @@ export default function Cabinet({ token }) {
 
   return (
     <div className="Cabinet">
-      <h1>Личный кабинет</h1>
+      <div className="section-title">
+        <h1>Личный кабинет</h1>
+      </div>
       <p id="showEmail">Текущий e-mail: {email}</p>
 
       <input id="email" placeholder="Новый Email" type="email" />

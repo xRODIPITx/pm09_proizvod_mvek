@@ -2,6 +2,14 @@
   width: 100%;
   min-height: calc(100vh - 50px - 50px);
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ProductCart {
+  margin: 20px !important;
 }
 
 .CartContent {

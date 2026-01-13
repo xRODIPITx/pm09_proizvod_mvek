@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Product from "../components/Product";
-import Link from "next/link";
 
-function Main({
+export default function Main({
   setCart,
   setCartPrice,
   setCartQty,
@@ -25,7 +24,7 @@ function Main({
       .then((result) => result.json())
       .then((result) => {
         // console.log(result);
-        setProducts(result.data.slice(0, 5));
+        setProducts(result.data);
       });
 
     const fetchPosts = async () => {
@@ -37,17 +36,27 @@ function Main({
     fetchPosts();
   }, []);
 
+  function AddProduct() {
+    if (token !== null) {
+      return (
+        <>
+          <button
+            className="addProduct"
+            onClick={() => setModalBox("ProductAdd")}
+          >
+            Добавить товар
+          </button>
+        </>
+      );
+    }
+  }
+
   return (
     <div className="Main">
-      <div className="banner">
-        <p className="banner_message">
-          Добро пожаловать в наш магазин! Здесь вы найдете все необходимое для
-          пикника и туризма.
-        </p>
-      </div>
       <div className="section-title">
-        <h1>Рекомендуемые товары</h1>
+        <h1>Каталог</h1>
       </div>
+      <AddProduct />
       <div className="prodGrid">
         {products.map((item) => (
           <Product
@@ -66,29 +75,6 @@ function Main({
           />
         ))}
       </div>
-
-      {/* Добавляем блок с последними статьями */}
-      <div className="section-title">
-        <h1>Последние статьи</h1>
-      </div>
-      <div className="blog-posts">
-        {posts.map((post) => (
-          <div key={post._id} className="blog-post">
-            <h3>{post.title}</h3>
-            <p>{post.content.substring(0, 150)}...</p>
-            <Link href={`/blog/${post._id}`} className="read-more">
-              Читать дальше
-            </Link>
-          </div>
-        ))}
-      </div>
-
-      {/* Ссылка на полную страницу блога */}
-      <div className="blog-link">
-        <Link href="/blog">Посмотреть все статьи</Link>
-      </div>
     </div>
   );
 }
-
-export default Main;

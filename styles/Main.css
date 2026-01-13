@@ -5,13 +5,18 @@
   padding-top: 30px;
 }
 
+.section-title h1 {
+  font-size: 2em;
+  margin: 20px;
+}
+
 .Main .addProduct {
   height: 50px;
   width: 200px;
   border-style: none;
   border-radius: 10px;
   font-size: 16pt;
-  margin: 10px 0 10px 0;
+  margin: 20px;
 }
 
 .banner {
@@ -36,14 +41,6 @@
   100% {
     opacity: 1;
   }
-}
-
-.Main .section_header {
-  padding: 15px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
 .Main .prodGrid {
