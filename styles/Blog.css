@@ -15,7 +15,7 @@
 }
 
 .blog-posts {
-  margin-top: 30px;
+  margin: 30px;
   width: 50%;
 }
 
@@ -67,4 +67,20 @@ div li {
 div li:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.blog-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+}
+
+.blog-title {
+  margin: 20px;
+}
+
+h4 {
+  padding: 20px;
 }

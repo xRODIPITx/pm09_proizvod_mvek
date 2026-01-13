@@ -7,7 +7,7 @@ export default function BlogPost() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    if (!id) return; // ждём пока id появится
+    if (!id) return;
 
     fetch(`/api/blog?id=${id}`)
       .then((res) => res.json())
@@ -20,9 +20,11 @@ export default function BlogPost() {
   if (!id || !post) return <p>Загрузка...</p>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+    <div className="blog-page">
+      <div className="blog-title">
+        <h1>{post.title}</h1>
+      </div>
+      <h4>{post.content}</h4>
     </div>
   );
 }
