@@ -79,8 +79,10 @@ div li:hover {
 
 .blog-title {
   margin: 20px;
+  text-align: center;
 }
 
 h4 {
   padding: 20px;
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Blog = ({ token, setModalBox, setMessage }) => {
+export default function Blog({ token, setModalBox, setMessage }) {
   const [posts, setPosts] = useState([]);
   console.log("setModalBox:", setModalBox);
 
@@ -16,7 +16,7 @@ const Blog = ({ token, setModalBox, setMessage }) => {
     fetchPosts();
   }, []);
 
-  function AddBlogPost() {
+  function AddBlogPost({ token, setModalBox }) {
     if (token !== null) {
       return (
         <>
@@ -54,6 +54,4 @@ const Blog = ({ token, setModalBox, setMessage }) => {
       </div>
     </div>
   );
-};
-
-export default Blog;
+}

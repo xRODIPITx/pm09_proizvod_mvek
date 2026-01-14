@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "../components/Product";
 import Link from "next/link";
 
-function Main({
+export default function Main({
   setCart,
   setCartPrice,
   setCartQty,
@@ -90,5 +90,3 @@ function Main({
     </div>
   );
 }
-
-export default Main;

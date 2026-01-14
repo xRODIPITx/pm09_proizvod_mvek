@@ -1,4 +1,4 @@
-function Registration({ setModalBox, setMessage }) {
+export default function Registration({ setModalBox, setMessage }) {
   function Reg() {
     const login = document.getElementById("login").value;
     const password = document.getElementById("password").value;
@@ -67,5 +67,3 @@ function Registration({ setModalBox, setMessage }) {
     </>
   );
 }
-
-export default Registration;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProductCart({
+export default function ProductCart({
   id,
   image,
   header,
@@ -51,5 +51,3 @@ function ProductCart({
     </div>
   );
 }
-
-export default ProductCart;

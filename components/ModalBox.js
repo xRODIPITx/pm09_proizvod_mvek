@@ -1,4 +1,4 @@
-function ModalBox({ setModalBox, children }) {
+export default function ModalBox({ setModalBox, children }) {
   return (
     <>
       <div className="echo" onClick={() => setModalBox("none")}></div>
@@ -6,5 +6,3 @@ function ModalBox({ setModalBox, children }) {
     </>
   );
 }
-
-export default ModalBox;

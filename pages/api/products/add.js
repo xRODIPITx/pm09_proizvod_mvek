@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   await connectDB(); // Подключение к базе данных
 
   if (req.method === "POST") {
-    const { header, price } = req.body;
+    const { header, price, category } = req.body;
 
     if (!header || !price) {
       return res.status(400).json({ message: "Заполните все поля" });
@@ -14,6 +14,7 @@ export default async function handler(req, res) {
     const product = new Product({
       header,
       price,
+      category,
     });
 
     try {

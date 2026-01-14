@@ -1,7 +1,6 @@
-function MessageBox({ setModalBox, message }) {
+export default function MessageBox({ setModalBox, message }) {
   const modalClose = () => {
     setModalBox("none");
-    // window.location.href = "/";
   };
   return (
     <div className="MessageBox">
@@ -12,5 +11,3 @@ function MessageBox({ setModalBox, message }) {
     </div>
   );
 }
-
-export default MessageBox;

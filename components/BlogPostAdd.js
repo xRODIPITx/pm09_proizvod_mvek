@@ -1,4 +1,4 @@
-function BlogPostAdd({ setModalBox, setMessage, token }) {
+export default function BlogPostAdd({ setModalBox, setMessage }) {
   function AddBlogPost() {
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
@@ -56,5 +56,3 @@ function BlogPostAdd({ setModalBox, setMessage, token }) {
     </>
   );
 }
-
-export default BlogPostAdd;

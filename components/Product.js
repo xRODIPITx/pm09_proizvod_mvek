@@ -1,4 +1,4 @@
-function Product({
+export default function Product({
   id,
   header,
   image,
@@ -55,5 +55,3 @@ function Product({
     </div>
   );
 }
-
-export default Product;

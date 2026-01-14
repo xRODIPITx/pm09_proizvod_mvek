@@ -1,4 +1,4 @@
-function Login({ setModalBox, setMessage, setToken }) {
+export default function Login({ setModalBox, setMessage, setToken }) {
   function Log() {
     const login = document.getElementById("login").value;
     const password = document.getElementById("password").value;
@@ -48,5 +48,3 @@ function Login({ setModalBox, setMessage, setToken }) {
     </>
   );
 }
-
-export default Login;
