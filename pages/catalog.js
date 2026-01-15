@@ -11,7 +11,21 @@ export default function Main({
   setMessage,
 }) {
   const [products, setProducts] = useState([]);
-  const [posts, setPosts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Все");
+
+  const categories = [
+    "Все",
+    "Палатки",
+    "Спальные мешки и коврики",
+    "Туристическая мебель",
+    "Посуда и кухонные принадлежности",
+    "Грили и мангалы",
+    "Питьевые системы и термосы",
+    "Рюкзаки и сумки",
+    "Тенты и навесы",
+    "Аксессуары для костра",
+    "Защитные средства",
+  ];
 
   useEffect(() => {
     const api = "/api/products";
@@ -23,17 +37,8 @@ export default function Main({
     })
       .then((result) => result.json())
       .then((result) => {
-        // console.log(result);
         setProducts(result.data);
       });
-
-    const fetchPosts = async () => {
-      const res = await fetch("/api/blog?page=home"); // Добавляем параметр page=home
-      const data = await res.json();
-      setPosts(data.data);
-    };
-
-    fetchPosts();
   }, []);
 
   function AddProduct() {
@@ -51,19 +56,43 @@ export default function Main({
     }
   }
 
+  // Фильтрация продуктов по выбранной категории
+  const filteredProducts =
+    selectedCategory === "Все"
+      ? products
+      : products.filter((item) => item.category === selectedCategory);
+
   return (
     <div className="Main">
       <div className="section-title">
         <h1>Каталог</h1>
       </div>
+
       <AddProduct />
+
+      {/* Фильтр по категориям */}
+      <div className="filter-block">
+        <label>Категория:</label>
+        <select
+          className="category-select"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="prodGrid">
-        {products.map((item) => (
+        {filteredProducts.map((item) => (
           <Product
             key={item._id}
             id={item._id}
             header={item.header}
-            image="/images/product.jpg"
+            image="/images/placeholder.png"
             price={item.price}
             setCart={setCart}
             setCartPrice={setCartPrice}
