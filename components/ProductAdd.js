@@ -11,41 +11,35 @@ export default function ProductAdd({ setModalBox, setMessage }) {
     "Рюкзаки и сумки",
     "Тенты и навесы",
     "Аксессуары для костра",
-    "Средства от насекомых и солнца",
+    "Защитные средства",
   ];
   const [category, setCategory] = useState(categories[0]);
 
-  function AddProduct() {
+  async function AddProduct() {
     const header = document.getElementById("header").value;
-    const price = document.getElementById("price").value;
-    // const category = document.getElementById("category").value;
-
-    let message;
+    const price = Number(document.getElementById("price").value);
 
     if (header.length === 0) {
-      document.getElementById("addProductError").innerText =
+      document.getElementById("addError").innerText =
         "Данные введены неправильно";
       return;
     }
 
-    const data = { header, price, category };
-
-    const api = "/api/products/add";
-
-    fetch(api, {
+    const res = await fetch("/api/products/add", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((result) => result.json())
-      .then((result) => (message = result.message));
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ header, price, category }),
+    });
+
+    const result = await res.json();
+
+    setMessage(result.message);
+    setModalBox("MessageBox");
 
     setTimeout(() => {
-      setMessage(message);
-      setModalBox("MessageBox");
-    }, 100);
+      setModalBox("none");
+      window.location.href = "/";
+    }, 1500);
   }
 
   return (
@@ -56,17 +50,21 @@ export default function ProductAdd({ setModalBox, setMessage }) {
         placeholder="Наименование"
         type="text"
         required
-        minlength="4"
+        minLength="4"
       />
       <input
         id="price"
         placeholder="Стоимость"
         type="number"
         required
-        minlength="1"
+        minLength="1"
       />
       <label>Категория:</label>
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+      <select
+        className="productAddModal"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      >
         {categories.map((cat) => (
           <option key={cat} value={cat}>
             {cat}
@@ -76,7 +74,7 @@ export default function ProductAdd({ setModalBox, setMessage }) {
       <button id="send" onClick={() => AddProduct()}>
         Добавить
       </button>
-      <p id="addProductError"></p>
+      <p id="addError"></p>
     </>
   );
 }
