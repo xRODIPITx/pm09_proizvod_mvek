@@ -8,6 +8,7 @@
 .MessageBox .message {
   font-size: 20pt;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .MessageBox button {
