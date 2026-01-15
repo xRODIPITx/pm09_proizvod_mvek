@@ -11,6 +11,7 @@ import "../styles/ProductCart.css";
 import "../styles/UserBox.css";
 import "../styles/Blog.css";
 import "../styles/ProductAdd.css";
+import "../styles/Catalog.css";
 
 import { useState, useEffect } from "react";
 import ModalBox from "../components/ModalBox";
