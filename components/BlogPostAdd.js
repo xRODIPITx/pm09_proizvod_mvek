@@ -1,37 +1,31 @@
 export default function BlogPostAdd({ setModalBox, setMessage }) {
-  function AddBlogPost() {
+  async function AddBlogPost() {
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
 
-    let message;
-
     if (title.length === 0 || content.length === 0) {
-      document.getElementById("addProductError").innerText =
+      document.getElementById("addError").innerText =
         "Поля обязательны для заполнения";
       return;
     }
 
-    const data = {
-      title,
-      content,
-    };
-
-    const api = "/api/blog";
-
-    fetch(api, {
+    const res = await fetch("/api/blog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
-    })
-      .then((result) => result.json())
-      .then((result) => (message = result.message));
+      body: JSON.stringify({ title, content }),
+    });
+
+    const result = await res.json();
+
+    setMessage(result.message);
+    setModalBox("MessageBox");
 
     setTimeout(() => {
-      setMessage(message);
-      setModalBox("MessageBox");
-    }, 100);
+      setModalBox("none");
+      window.location.href = "/";
+    }, 1500);
   }
 
   return (
@@ -41,18 +35,18 @@ export default function BlogPostAdd({ setModalBox, setMessage }) {
         id="title"
         placeholder="Заголовок поста"
         type="text"
-        minlength="4"
+        minLength="4"
       />
-      <input
+      <textarea
         id="content"
         placeholder="Содержимое поста"
         type="text"
-        minlength="10"
+        rows="5"
       />
       <button id="send" onClick={() => AddBlogPost()}>
         Создать
       </button>
-      <p id="addProductError"></p>
+      <p id="addError"></p>
     </>
   );
 }
