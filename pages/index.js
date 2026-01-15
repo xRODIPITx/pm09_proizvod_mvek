@@ -54,7 +54,7 @@ export default function Main({
             key={item._id}
             id={item._id}
             header={item.header}
-            image="/images/product.jpg"
+            image="/images/placeholder.png"
             price={item.price}
             setCart={setCart}
             setCartPrice={setCartPrice}
