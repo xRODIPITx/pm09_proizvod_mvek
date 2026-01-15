@@ -49,7 +49,7 @@ export default function Product({
   return (
     <div className="Product">
       <img src={image} alt={header} />
-      <h1>{header}</h1>
+      <h1 title={header}>{header}</h1>
       <p>{`${price} руб`}</p>
       <AddToCartButton />
     </div>
