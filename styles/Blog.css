@@ -48,7 +48,6 @@
 }
 
 .blog-link {
-  margin-top: 20px;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -82,7 +81,17 @@ div li:hover {
   text-align: center;
 }
 
-h4 {
+h4,
+.blog-content {
   padding: 20px;
   text-align: center;
+}
+
+.blog-content {
+  width: 70%;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
 }

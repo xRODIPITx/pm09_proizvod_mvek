@@ -25,7 +25,7 @@ export default function BlogPost() {
         <h1>{post.title}</h1>
         <h4>{post.createdAt.substring(0, 16)}</h4>
       </div>
-      <h4>{post.content}</h4>
+      <h4 className="blog-content">{post.content}</h4>
     </div>
   );
 }
