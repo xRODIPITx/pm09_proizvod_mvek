@@ -95,3 +95,7 @@ textarea {
   width: 100%;
   margin-bottom: 10px;
 }
+
+.blog-title h4 {
+  font-style: italic;
+}
