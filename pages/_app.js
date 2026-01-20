@@ -12,6 +12,7 @@ import "../styles/UserBox.css";
 import "../styles/Blog.css";
 import "../styles/ProductAdd.css";
 import "../styles/Catalog.css";
+import "../styles/Admin.css";
 
 import { useState, useEffect } from "react";
 import ModalBox from "../components/ModalBox";
@@ -23,6 +24,7 @@ import BlogPostAdd from "../components/BlogPostAdd";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UserBox from "../components/UserBox";
+import ProductEdit from "../components/ProductEdit";
 
 export default function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
@@ -31,6 +33,11 @@ export default function MyApp({ Component, pageProps }) {
   const [message, setMessage] = useState("");
   const [modalBox, setModalBox] = useState("none");
   const [token, setToken] = useState(null);
+  const [editProduct, setEditProduct] = useState(null);
+
+  async function fetchProducts() {
+    // Это заглушка, её перезапишет страница admin/products
+  }
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -81,6 +88,16 @@ export default function MyApp({ Component, pageProps }) {
         />
       </ModalBox>
     ),
+    ProductEdit: (
+      <ModalBox setModalBox={setModalBox}>
+        <ProductEdit
+          product={editProduct}
+          setModalBox={setModalBox}
+          setMessage={setMessage}
+          onUpdated={fetchProducts}
+        />
+      </ModalBox>
+    ),
   };
 
   return (
@@ -103,6 +120,9 @@ export default function MyApp({ Component, pageProps }) {
         setModalBox={setModalBox}
         message={message}
         setMessage={setMessage}
+        editProduct={editProduct}
+        setEditProduct={setEditProduct}
+        fetchProducts={fetchProducts}
       />
       {modalBoxes[modalBox]}
       <Footer />
