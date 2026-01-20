@@ -1,0 +1,130 @@
+.Admin {
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 50px - 50px);
+}
+
+.admin-grid {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card button,
+.AdminProducts a button,
+.prod-head-btn button {
+  display: block;
+  padding: 10px;
+}
+
+.admin-card a,
+.AdminProducts a {
+  text-decoration: none;
+}
+
+.admin-card,
+.AdminProducts a,
+.prod-head-btn {
+  margin-top: 10px;
+}
+
+.back-to-main {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.admin-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+}
+
+.admin-card h2 {
+  margin-bottom: 15px;
+  height: 70px;
+}
+
+/*Products*/
+.AdminProducts {
+  padding: 30px;
+}
+
+div h1 {
+  text-align: center;
+}
+
+.prod-head-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-table {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.actions button {
+  margin: 0 5px;
+}
+
+button.danger {
+  background: #d9534f;
+  color: white;
+}
+
+/*Product Edit*/
+.ProductEdit {
+  padding: 10px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProductEdit input,
+.ProductEdit select {
+  padding: 6px;
+  font-size: 14px;
+}
+
+.ProductEdit .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.actions button {
+  width: 70%;
+  height: 35px;
+}
+
+.prod-edit-save {
+  margin-top: 10px;
+}
