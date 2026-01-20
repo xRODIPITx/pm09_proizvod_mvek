@@ -27,7 +27,12 @@ export default async function handler(req, res) {
       }
 
       // Генерация JWT токена
-      const token = generateAccessToken(user._id, user.login, user.email);
+      const token = generateAccessToken(
+        user._id,
+        user.login,
+        user.email,
+        user.role
+      );
 
       return res.status(200).json({
         message: "Вы успешно вошли на сайт!",
