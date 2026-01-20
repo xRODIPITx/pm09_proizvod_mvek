@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Product from "../components/Product";
 
 export default function Main({
@@ -12,6 +13,8 @@ export default function Main({
 }) {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Все");
+  const router = useRouter();
+  const search = router.query.search || "";
 
   const categories = [
     "Все",
@@ -28,33 +31,16 @@ export default function Main({
   ];
 
   useEffect(() => {
-    const api = "/api/products";
-    fetch(api, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((result) => result.json())
-      .then((result) => {
-        setProducts(result.data);
-      });
-  }, []);
-
-  function AddProduct() {
-    if (token !== null) {
-      return (
-        <>
-          <button
-            className="addProduct"
-            onClick={() => setModalBox("ProductAdd")}
-          >
-            Добавить товар
-          </button>
-        </>
+    async function fetchProducts() {
+      const res = await fetch(
+        `/api/products?search=${encodeURIComponent(search)}`
       );
+      const data = await res.json();
+      setProducts(data.data);
     }
-  }
+
+    fetchProducts();
+  }, [search]);
 
   // Фильтрация продуктов по выбранной категории
   const filteredProducts =
@@ -67,8 +53,6 @@ export default function Main({
       <div className="section-title">
         <h1>Каталог</h1>
       </div>
-
-      <AddProduct />
 
       {/* Фильтр по категориям */}
       <div className="filter-block">
@@ -85,6 +69,12 @@ export default function Main({
           ))}
         </select>
       </div>
+
+      {search && (
+        <p style={{ marginTop: "10px" }}>
+          Результаты поиска: <strong>{search}</strong>
+        </p>
+      )}
 
       <div className="prodGrid">
         {filteredProducts.map((item) => (
