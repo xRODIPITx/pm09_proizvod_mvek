@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function ProductAdd({ setModalBox, setMessage }) {
   const categories = [
@@ -14,6 +15,7 @@ export default function ProductAdd({ setModalBox, setMessage }) {
     "Защитные средства",
   ];
   const [category, setCategory] = useState(categories[0]);
+  const router = useRouter();
 
   async function AddProduct() {
     const header = document.getElementById("header").value;
@@ -38,7 +40,7 @@ export default function ProductAdd({ setModalBox, setMessage }) {
 
     setTimeout(() => {
       setModalBox("none");
-      window.location.href = "/";
+      router.reload();
     }, 1500);
   }
 
@@ -58,6 +60,7 @@ export default function ProductAdd({ setModalBox, setMessage }) {
         type="number"
         required
         minLength="1"
+        min="1"
       />
       <label>Категория:</label>
       <select

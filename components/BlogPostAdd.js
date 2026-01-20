@@ -1,4 +1,8 @@
+import { useRouter } from "next/router";
+
 export default function BlogPostAdd({ setModalBox, setMessage }) {
+  const router = useRouter();
+
   async function AddBlogPost() {
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
@@ -24,7 +28,7 @@ export default function BlogPostAdd({ setModalBox, setMessage }) {
 
     setTimeout(() => {
       setModalBox("none");
-      window.location.href = "/";
+      router.reload();
     }, 1500);
   }
 
