@@ -49,3 +49,39 @@ ul a {
     height: 250px;
   }
 }
+
+/* Поисковая форма */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px;
+}
+
+.search-input {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 300px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2f7e54;
+}
+
+.search-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s;
+  border-color: #2f7e54;
+}
+
+.search-btn:hover {
+  background-color: #256342;
+}
