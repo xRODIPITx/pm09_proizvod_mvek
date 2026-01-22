@@ -17,6 +17,17 @@ export default function BlogPost() {
       });
   }, [id]);
 
+  async function deleteBlogPost(id) {
+    if (!confirm("Удалить запись в блоге?")) return;
+
+    const res = await fetch(`/api/blog/delete?id=${id}`, {
+      method: "DELETE",
+    });
+
+    const data = await res.json();
+    router.push("/blog");
+  }
+
   if (!id || !post) return <p>Загрузка...</p>;
 
   return (
@@ -26,6 +37,9 @@ export default function BlogPost() {
         <h4>{post.createdAt.substring(0, 16)}</h4>
       </div>
       <h4 className="blog-content">{post.content}</h4>
+      <button className="danger" onClick={() => deleteBlogPost(post._id)}>
+        Удалить
+      </button>
     </div>
   );
 }

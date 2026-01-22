@@ -1,5 +1,5 @@
-import BlogPost from "../../models/BlogPost";
-import connectDB from "../../lib/mongodb";
+import BlogPost from "../../../models/BlogPost";
+import connectDB from "../../../lib/mongodb";
 
 export default async function handler(req, res) {
   await connectDB();
