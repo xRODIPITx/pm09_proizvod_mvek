@@ -1,4 +1,3 @@
-import "../styles/index.css";
 import "../styles/Cabinet.css";
 import "../styles/Cart.css";
 import "../styles/Footer.css";
@@ -13,6 +12,8 @@ import "../styles/Blog.css";
 import "../styles/ProductAdd.css";
 import "../styles/Catalog.css";
 import "../styles/Admin.css";
+import "../styles/CartOrder.css";
+import "../styles/index.css";
 
 import { useState, useEffect } from "react";
 import ModalBox from "../components/ModalBox";
@@ -25,6 +26,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UserBox from "../components/UserBox";
 import ProductEdit from "../components/ProductEdit";
+import CartOrder from "../components/CartOrder";
 
 export default function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
@@ -34,6 +36,7 @@ export default function MyApp({ Component, pageProps }) {
   const [modalBox, setModalBox] = useState("none");
   const [token, setToken] = useState(null);
   const [editProduct, setEditProduct] = useState(null);
+  const [orderFormData, setOrderFormData] = useState(null);
 
   async function fetchProducts() {
     // Это заглушка, её перезапишет страница admin/products
@@ -44,6 +47,21 @@ export default function MyApp({ Component, pageProps }) {
       setToken(localStorage.getItem("token"));
     }
   }, []);
+
+  useEffect(() => {
+    if (!orderFormData) return;
+
+    console.log("ORDER:", orderFormData, cart);
+
+    setCart([]);
+    setCartQty(0);
+    setCartPrice(0);
+
+    setMessage("Заказ оформлен!");
+    setModalBox("MessageBox");
+
+    setOrderFormData(null);
+  }, [orderFormData]);
 
   const modalBoxes = {
     none: null,
@@ -95,6 +113,18 @@ export default function MyApp({ Component, pageProps }) {
           setModalBox={setModalBox}
           setMessage={setMessage}
           onUpdated={fetchProducts}
+        />
+      </ModalBox>
+    ),
+    OrderForm: (
+      <ModalBox setModalBox={setModalBox}>
+        <CartOrder
+          cart={cart}
+          onSubmit={(buyer) => {
+            setOrderFormData(buyer);
+            setModalBox("none");
+          }}
+          onClose={() => setModalBox("none")}
         />
       </ModalBox>
     ),
