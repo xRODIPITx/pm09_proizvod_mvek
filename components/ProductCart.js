@@ -32,22 +32,30 @@ export default function ProductCart({
   }
 
   return (
-    <div className="ProductCart">
-      <img src={image} alt="Изображение товара" />
-      <h1>{header}</h1>
-      <p>{price} рублей</p>
-      <button className="del" onClick={() => deleteCart()}>
-        Удалить
-      </button>
-      <div className="cartQty">
-        <button className="minus" onClick={() => minus()}>
-          -
+    <tr>
+      <td>
+        <img src={image} alt={header} style={{ width: "60px" }} />
+      </td>
+
+      <td>{header}</td>
+
+      <td>{price} ₽</td>
+
+      <td>
+        <div className="qty-control">
+          <button onClick={minus}>-</button>
+          <span>{qty}</span>
+          <button onClick={plus}>+</button>
+        </div>
+      </td>
+
+      <td>{price * qty} ₽</td>
+
+      <td>
+        <button className="danger" onClick={deleteCart}>
+          Удалить
         </button>
-        <p className="qty">{qty}</p>
-        <button className="plus" onClick={() => plus()}>
-          +
-        </button>
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 }
