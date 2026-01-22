@@ -95,11 +95,6 @@ table td {
   margin: 0 5px;
 }
 
-button.danger {
-  background: #d9534f;
-  color: white;
-}
-
 /*Product Edit*/
 .ProductEdit {
   padding: 10px 50px 20px 50px;
