@@ -4,13 +4,11 @@
   min-height: 150px;
   border-radius: 10px;
   background-color: white;
-  position: absolute;
-  top: 20%;
-  left: calc(50% - 200px);
   padding: 10px 50px 20px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1001;
 }
 
 .ModalBox h1 {
@@ -26,7 +24,6 @@
   width: 100%;
   height: 30px;
   margin-bottom: 10px;
-  /* border: none; */
 }
 
 .ModalBox button {
@@ -36,7 +33,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin: 5px;
+  margin-top: 10px;
 }
 
 .ModalBox button:hover {
@@ -44,11 +41,17 @@
 }
 
 .echo {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #747474;
-  opacity: 0.3;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.4);
 }
