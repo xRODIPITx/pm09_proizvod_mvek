@@ -31,12 +31,10 @@ export default function Login({ setModalBox, setMessage, setToken }) {
         if (result.token !== undefined && typeof window !== "undefined") {
           localStorage.setItem("token", result.token);
           setToken(result.token);
+          setMessage(message);
+          setModalBox("MessageBox");
         }
       });
-    setTimeout(() => {
-      setMessage(message);
-      setModalBox("MessageBox");
-    }, 100);
   }
 
   return (
