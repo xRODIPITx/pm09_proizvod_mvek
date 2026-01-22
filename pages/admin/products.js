@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function AdminProducts({
   token,
   setModalBox,
-  setMessage,
   setEditProduct,
   fetchProducts,
 }) {
