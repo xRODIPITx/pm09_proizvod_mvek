@@ -29,7 +29,7 @@ export default function Main({
       });
 
     const fetchPosts = async () => {
-      const res = await fetch("/api/blog?page=home"); // Добавляем параметр page=home
+      const res = await fetch("/api/blog?page=home");
       const data = await res.json();
       setPosts(data.data);
     };
@@ -66,6 +66,9 @@ export default function Main({
           />
         ))}
       </div>
+      <Link href={"/catalog"} className="read-more">
+        Открыть каталог
+      </Link>
 
       {/* Добавляем блок с последними статьями */}
       <div className="section-title">

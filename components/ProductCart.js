@@ -18,14 +18,20 @@ export default function ProductCart({
   }
 
   function plus() {
-    setQty((current) => current + 1);
+    setQty(qty + 1);
+    setCart((current) =>
+      current.map((p) => (p.id === id ? { ...p, qty: qty + 1 } : p)),
+    );
     setCartPrice((current) => current + price);
     setCartQty((current) => current + 1);
   }
 
   function minus() {
     if (qty > 1) {
-      setQty((current) => current - 1);
+      setQty(qty - 1);
+      setCart((current) =>
+        current.map((p) => (p.id === id ? { ...p, qty: qty - 1 } : p)),
+      );
       setCartPrice((current) => current - price);
       setCartQty((current) => current - 1);
     }

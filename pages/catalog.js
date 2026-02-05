@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Product from "../components/Product";
+import Link from "next/link";
 
 export default function Main({
   setCart,
@@ -33,7 +34,7 @@ export default function Main({
   useEffect(() => {
     async function fetchProducts() {
       const res = await fetch(
-        `/api/products?search=${encodeURIComponent(search)}`
+        `/api/products?search=${encodeURIComponent(search)}`,
       );
       const data = await res.json();
       setProducts(data.data);
@@ -78,20 +79,21 @@ export default function Main({
 
       <div className="prodGrid">
         {filteredProducts.map((item) => (
-          <Product
-            key={item._id}
-            id={item._id}
-            header={item.header}
-            image="/images/placeholder.png"
-            price={item.price}
-            setCart={setCart}
-            setCartPrice={setCartPrice}
-            setCartQty={setCartQty}
-            cart={cart}
-            token={token}
-            setMessage={setMessage}
-            setModalBox={setModalBox}
-          />
+          <Link key={item._id} href={`/product/${item._id}`}>
+            <Product
+              id={item._id}
+              header={item.header}
+              image="/images/placeholder.png"
+              price={item.price}
+              setCart={setCart}
+              setCartPrice={setCartPrice}
+              setCartQty={setCartQty}
+              cart={cart}
+              token={token}
+              setMessage={setMessage}
+              setModalBox={setModalBox}
+            />
+          </Link>
         ))}
       </div>
     </div>

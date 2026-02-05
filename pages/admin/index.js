@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
 
-export default function AdminPage({ token, setModalBox, setMessage }) {
+export default function AdminPage({ token }) {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [stats, setStats] = useState({
+    productCount: 0,
+    orderCount: 0,
+    totalRevenue: 0,
+  });
 
   useEffect(() => {
     if (!token) return;
@@ -12,11 +17,18 @@ export default function AdminPage({ token, setModalBox, setMessage }) {
       const decoded = jwtDecode(token);
       if (decoded.role === "admin") {
         setIsAdmin(true);
+        fetchStats();
       }
     } catch (err) {
       console.log("Ошибка декодирования токена:", err);
     }
   }, [token]);
+
+  async function fetchStats() {
+    const res = await fetch("/api/orders/stats");
+    const data = await res.json();
+    setStats(data);
+  }
 
   // блок для обычных пользователей
   if (!token || !isAdmin) {
@@ -40,32 +52,42 @@ export default function AdminPage({ token, setModalBox, setMessage }) {
 
       <div className="admin-grid">
         {/* Управление товарами */}
-        <div className="admin-card">
-          <h2>Управление товарами</h2>
-          <div className="admin-card-btn">
-            <Link href="/admin/products">
-              <button>Список товаров</button>
-            </Link>
+        <div>
+          <div className="admin-card">
+            <h2>Управление товарами</h2>
+            <div className="admin-card-btn">
+              <Link href="/admin/products">
+                <button>Список товаров</button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Управление заказами */}
+          <div className="admin-card">
+            <h2>Управление заказами</h2>
+            <div className="admin-card-btn">
+              <Link href="/admin/orders">
+                <button>Посмотреть заказы</button>
+              </Link>
+            </div>
           </div>
         </div>
-
-        {/* Управление заказами */}
-        <div className="admin-card">
-          <h2>Управление заказами</h2>
-          <div className="admin-card-btn">
-            <Link href="/admin/orders">
-              <button>Посмотреть заказы</button>
-            </Link>
-          </div>
-        </div>
-
         {/* Статистика */}
-        <div className="admin-card">
+        <div className="stats">
           <h2>Статистика</h2>
-          <div className="admin-card-btn">
-            <Link href="/admin/stats">
-              <button>Просмотр статистики</button>
-            </Link>
+          <div className="stats-cont">
+            <div className="stats-item">
+              <span>Общее количество товаров:</span>
+              <strong>{stats.productCount}</strong>
+            </div>
+            <div className="stats-item">
+              <span>Общее количество заказов:</span>
+              <strong>{stats.orderCount}</strong>
+            </div>
+            <div className="stats-item">
+              <span>Общая выручка:</span>
+              <strong>{stats.totalRevenue} ₽</strong>
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Product({
   id,
   header,
@@ -11,12 +13,15 @@ export default function Product({
   setModalBox,
   token,
 }) {
-  function addToCart() {
+  function addToCart(e) {
+    e.stopPropagation();
     const index = cart.findIndex((value) => value.id === id);
-    console.debug(index);
 
     if (index === -1) {
-      setCart((prevState) => [...prevState, { id, image, header, price }]);
+      setCart((prevState) => [
+        ...prevState,
+        { id, image, header, price, qty: 1 },
+      ]);
       setCartPrice((current) => current + price);
       setCartQty((current) => current + 1);
     } else {
@@ -32,8 +37,8 @@ export default function Product({
     if (token && token !== null && token !== undefined) {
       return (
         <>
-          <button className="buy" onClick={() => addToCart()}>
-            Купить
+          <button className="buy" onClick={(e) => addToCart(e)}>
+            В корзину
           </button>
         </>
       );
@@ -48,9 +53,11 @@ export default function Product({
 
   return (
     <div className="Product">
-      <img src={image} alt={header} />
-      <h1 title={header}>{header}</h1>
-      <p>{`${price} руб`}</p>
+      <Link href={`/product/${id}`}>
+        <img src={image} alt={header} />
+        <h1 title={header}>{header}</h1>
+        <p>{`${price} руб`}</p>
+      </Link>
       <AddToCartButton />
     </div>
   );

@@ -19,18 +19,18 @@ export default function ProductAdd({ setModalBox, setMessage }) {
 
   async function AddProduct() {
     const header = document.getElementById("header").value;
+    const description = document.getElementById("description").value;
     const price = Number(document.getElementById("price").value);
 
-    if (header.length === 0) {
-      document.getElementById("addError").innerText =
-        "Данные введены неправильно";
+    if (header.length === 0 || description.length === 0) {
+      document.getElementById("addError").innerText = "Поля не заполнены";
       return;
     }
 
     const res = await fetch("/api/products/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ header, price, category }),
+      body: JSON.stringify({ header, description, price, category }),
     });
 
     const result = await res.json();
@@ -53,6 +53,12 @@ export default function ProductAdd({ setModalBox, setMessage }) {
         type="text"
         required
         minLength="4"
+      />
+      <textarea
+        id="description"
+        placeholder="Описание товара"
+        type="text"
+        rows="5"
       />
       <input
         id="price"

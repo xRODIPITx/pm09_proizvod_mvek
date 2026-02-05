@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 export default function Cabinet({ token }) {
   const [localToken, setLocalToken] = useState(token || null);
   const [email, setEmail] = useState(null);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     if (!localToken && typeof window !== "undefined") {
@@ -13,7 +14,6 @@ export default function Cabinet({ token }) {
   }, [localToken]);
 
   useEffect(() => {
-    // Декодируем токен, когда он появился
     if (token && typeof token === "string") {
       try {
         const decoded = jwtDecode(token);
@@ -22,6 +22,15 @@ export default function Cabinet({ token }) {
         console.warn("Ошибка декодирования токена:", err);
       }
     }
+  }, [token]);
+
+  useEffect(() => {
+    if (!token) return;
+    const userId = jwtDecode(token).id;
+
+    fetch(`/api/orders/user?userId=${userId}`)
+      .then((res) => res.json())
+      .then((data) => setOrders(data.data));
   }, [token]);
 
   function emailChange() {
@@ -77,7 +86,7 @@ export default function Cabinet({ token }) {
       });
   }
 
-  // Показ до авторизации
+  // ПОльзователь не авторизован
   if (!email) {
     return (
       <div className="Cabinet">
@@ -109,8 +118,23 @@ export default function Cabinet({ token }) {
       <button id="sendPassword" onClick={passwordChange}>
         Сменить пароль
       </button>
-
       <p id="errorMessage"></p>
+
+      <h2>Мои заказы</h2>
+      {orders.length === 0 && <p>Заказов пока нет</p>}
+      {orders.map((o) => (
+        <div key={o._id} className="order">
+          <p>Дата: {o.createdAt.substring(0, 10)}</p>
+          <p>Сумма: {o.total} ₽</p>
+          <ul>
+            {o.items.map((i) => (
+              <li key={i.productId}>
+                {i.header} x {i.qty}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }

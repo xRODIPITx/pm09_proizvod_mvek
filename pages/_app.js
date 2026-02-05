@@ -14,6 +14,7 @@ import "../styles/Catalog.css";
 import "../styles/Admin.css";
 import "../styles/CartOrder.css";
 import "../styles/index.css";
+import "../styles/ProductPage.css";
 
 import { useState, useEffect } from "react";
 import ModalBox from "../components/ModalBox";
@@ -120,10 +121,12 @@ export default function MyApp({ Component, pageProps }) {
       <ModalBox setModalBox={setModalBox}>
         <CartOrder
           cart={cart}
-          onSubmit={(buyer) => {
-            setOrderFormData(buyer);
-            setModalBox("none");
-          }}
+          token={token}
+          setCart={setCart}
+          setCartQty={setCartQty}
+          setCartPrice={setCartPrice}
+          setMessage={setMessage}
+          setModalBox={setModalBox}
           onClose={() => setModalBox("none")}
         />
       </ModalBox>
