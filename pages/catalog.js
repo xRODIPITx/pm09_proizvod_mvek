@@ -79,21 +79,20 @@ export default function Main({
 
       <div className="prodGrid">
         {filteredProducts.map((item) => (
-          <Link key={item._id} href={`/product/${item._id}`}>
-            <Product
-              id={item._id}
-              header={item.header}
-              image="/images/placeholder.png"
-              price={item.price}
-              setCart={setCart}
-              setCartPrice={setCartPrice}
-              setCartQty={setCartQty}
-              cart={cart}
-              token={token}
-              setMessage={setMessage}
-              setModalBox={setModalBox}
-            />
-          </Link>
+          <Product
+            key={item._id}
+            id={item._id}
+            header={item.header}
+            image="/images/placeholder.png"
+            price={item.price}
+            setCart={setCart}
+            setCartPrice={setCartPrice}
+            setCartQty={setCartQty}
+            cart={cart}
+            token={token}
+            setMessage={setMessage}
+            setModalBox={setModalBox}
+          />
         ))}
       </div>
     </div>
