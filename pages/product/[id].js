@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Review from "../../components/Review";
+import { jwtDecode } from "jwt-decode";
 
 export default function ProductPage({
   header,
@@ -12,6 +13,7 @@ export default function ProductPage({
   cart,
   setMessage,
   setModalBox,
+  token,
 }) {
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
@@ -39,52 +41,82 @@ export default function ProductPage({
     }, 100);
   }
 
-  // Загружаем информацию о товаре
+  // Загрузка информации о товаре
   useEffect(() => {
     if (!id) return;
 
     fetch(`/api/products?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Product Data:", data);
+        // console.log("Product Data:", data);
         setProduct(data.data);
-      });
-
-    // Получаем отзывы для товара
-    fetch(`/api/reviews?productId=${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setReviews(data.data);
       });
   }, [id]);
 
+  // Загрузка отзывов с сервера
+  useEffect(() => {
+    fetchReviews(); // При загрузке компонента, получаем все отзывы
+  }, []);
+
+  // Функция для загрузки отзывов
+  const fetchReviews = async () => {
+    const res = await fetch(`/api/reviews?productId=${id}`);
+    const data = await res.json();
+    setReviews(data.data);
+  };
+
   // Отправка отзыва
-  const handleSubmitReview = async () => {
+  const submitReview = async () => {
+    let userName = "Гость"; // Значение по умолчанию
+
+    if (token) {
+      try {
+        userName = jwtDecode(token).login;
+      } catch (err) {
+        console.log("Ошибка токена:", err);
+      }
+    }
+
     const res = await fetch("/api/reviews/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ productId: id, rating, comment, user: "Гость" }), // Указываем "Гость", если нет авторизации
+      body: JSON.stringify({ productId: id, rating, comment, user: userName }),
     });
 
     const data = await res.json();
     if (res.status === 201) {
-      alert("Отзыв добавлен");
-      setComment(""); // очищаем форму
+      setMessage("Отзыв добавлен!");
+      setModalBox("MessageBox");
+      setComment(""); // очистка формы
       setRating(1);
-      // обновляем отзывы
-      fetch(`/api/reviews?productId=${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setReviews(data.data);
-        });
+      // обновление отзывов
+      fetchReviews();
     } else {
       alert(data.message);
     }
   };
 
   if (!product) return <p>Загрузка...</p>;
+
+  function AddToCartButton() {
+    if (token && token !== null && token !== undefined) {
+      return (
+        <>
+          <button className="add-to-cart" onClick={() => addToCart()}>
+            В корзину
+          </button>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <p>Авторизуйтесь для добавления товара в корзину</p>
+        </>
+      );
+    }
+  }
 
   return (
     <div className="product-page">
@@ -99,9 +131,7 @@ export default function ProductPage({
           <h1>{product.header}</h1>
           <p>{product.description}</p>
           <p className="price">{product.price} ₽</p>
-          <button className="add-to-cart" onClick={() => addToCart()}>
-            Добавить в корзину
-          </button>
+          <AddToCartButton />
         </div>
       </div>
 
@@ -109,7 +139,14 @@ export default function ProductPage({
       <h2>Отзывы</h2>
       {reviews.length === 0 && <p>Отзывов пока нет</p>}
       {reviews.map((review) => (
-        <Review key={review._id} review={review} />
+        <Review
+          key={review._id}
+          review={review}
+          setMessage={setMessage}
+          setModalBox={setModalBox}
+          fetchReviews={fetchReviews}
+          token={token}
+        />
       ))}
 
       {/* Форма для оставления отзыва */}
@@ -132,7 +169,7 @@ export default function ProductPage({
             placeholder="Ваш отзыв"
           />
         </div>
-        <button onClick={handleSubmitReview}>Отправить</button>
+        <button onClick={submitReview}>Отправить</button>
       </div>
     </div>
   );

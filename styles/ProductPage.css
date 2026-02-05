@@ -145,7 +145,6 @@
 
 .review .review-header span {
   font-size: 14px;
-  color: #777;
 }
 
 .review .review-header span:first-child {
@@ -162,6 +161,21 @@
   font-size: 12px;
   color: #bbb;
   margin-top: 10px;
+}
+
+.delete-review {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.delete-review:hover {
+  background-color: #c0392b;
 }
 
 /*Описание товара*/
