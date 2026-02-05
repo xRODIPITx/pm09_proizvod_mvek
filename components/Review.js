@@ -11,16 +11,14 @@ export default function Review({
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    // Получаем токен из localStorage
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      setToken(storedToken); // Устанавливаем токен в состояние
+      setToken(storedToken);
 
-      // Декодируем токен и проверяем роль
       try {
         const decoded = jwtDecode(storedToken);
         if (decoded.role === "admin") {
-          setIsAdmin(true); // Если роль "admin", показываем кнопку удаления
+          setIsAdmin(true); // Показываем кнопку удаления если роль admin
         }
       } catch (err) {
         console.error("Ошибка декодирования токена:", err);
@@ -28,7 +26,6 @@ export default function Review({
     }
   }, []); // При первом рендере компонента, извлекаем токен из localStorage
 
-  // Функция для удаления отзыва
   const deleteReview = async () => {
     if (window.confirm("Вы уверены, что хотите удалить этот отзыв?")) {
       const res = await fetch(`/api/reviews/delete?id=${review._id}`, {
@@ -56,7 +53,6 @@ export default function Review({
       <p>{review.comment}</p>
       <p>Дата: {new Date(review.createdAt).toLocaleDateString()}</p>
 
-      {/* Кнопка удаления отзыва для администратора */}
       {isAdmin && (
         <button className="delete-review" onClick={deleteReview}>
           Удалить отзыв
