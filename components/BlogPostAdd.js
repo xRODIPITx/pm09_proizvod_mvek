@@ -13,7 +13,7 @@ export default function BlogPostAdd({ setModalBox, setMessage }) {
       return;
     }
 
-    const res = await fetch("/api/blog", {
+    const res = await fetch("/api/blog/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -12,7 +12,7 @@ export default function BlogPost() {
     fetch(`/api/blog?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("DATA:", data);
+        // console.log("DATA:", data);
         setPost(data.data);
       });
   }, [id]);

@@ -18,13 +18,13 @@ export default function Review({
       try {
         const decoded = jwtDecode(storedToken);
         if (decoded.role === "admin") {
-          setIsAdmin(true); // Показываем кнопку удаления если роль admin
+          setIsAdmin(true);
         }
       } catch (err) {
         console.error("Ошибка декодирования токена:", err);
       }
     }
-  }, []); // При первом рендере компонента, извлекаем токен из localStorage
+  }, []); // При первом рендере компонента, извлекает токен из localStorage
 
   const deleteReview = async () => {
     if (window.confirm("Вы уверены, что хотите удалить этот отзыв?")) {

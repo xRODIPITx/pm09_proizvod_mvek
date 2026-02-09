@@ -3,12 +3,11 @@ import Link from "next/link";
 
 export default function Blog({ token, setModalBox, setMessage }) {
   const [posts, setPosts] = useState([]);
-  console.log("setModalBox:", setModalBox);
 
   useEffect(() => {
     // Запрашиваем все статьи для страницы блога
     const fetchPosts = async () => {
-      const res = await fetch("/api/blog"); // Без параметра page
+      const res = await fetch("/api/blog");
       const data = await res.json();
       setPosts(data.data);
     };

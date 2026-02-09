@@ -19,10 +19,13 @@ export default function ProductPage({
   const [reviews, setReviews] = useState([]);
   const [rating, setRating] = useState(1);
   const [comment, setComment] = useState("");
+  const [averageRating, setAverageRating] = useState(0);
   const router = useRouter();
   const { id } = router.query;
 
   function addToCart() {
+    if (!product) return;
+
     const index = cart.findIndex((value) => value.id === id);
 
     if (index === -1) {
@@ -55,14 +58,27 @@ export default function ProductPage({
 
   // Загрузка отзывов с сервера
   useEffect(() => {
-    fetchReviews(); // При загрузке компонента, получаем все отзывы
-  }, []);
+    // Запрос к API только если id определено
+    if (id) {
+      fetchReviews();
+    }
+  }, [id]);
 
   // Функция для загрузки отзывов
   const fetchReviews = async () => {
     const res = await fetch(`/api/reviews?productId=${id}`);
     const data = await res.json();
     setReviews(data.data);
+
+    // Рассчитываем средний рейтинг
+    if (data.data.length > 0) {
+      const totalRating = data.data.reduce(
+        (acc, review) => acc + review.rating,
+        0,
+      );
+      const avgRating = totalRating / data.data.length;
+      setAverageRating(avgRating.toFixed(1)); // Округляем до одного знака после запятой
+    }
   };
 
   // Отправка отзыва
@@ -82,7 +98,12 @@ export default function ProductPage({
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ productId: id, rating, comment, user: userName }),
+      body: JSON.stringify({
+        productId: id,
+        rating,
+        comment,
+        user: userName,
+      }),
     });
 
     const data = await res.json();
@@ -137,6 +158,11 @@ export default function ProductPage({
 
       {/* Отзывы */}
       <h2>Отзывы</h2>
+      {reviews.length > 0 && (
+        <div>
+          <p>Средняя оценка: {averageRating} / 5</p>
+        </div>
+      )}
       {reviews.length === 0 && <p>Отзывов пока нет</p>}
       {reviews.map((review) => (
         <Review

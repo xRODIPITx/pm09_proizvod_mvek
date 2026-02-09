@@ -7,21 +7,6 @@ export default async function handler(req, res) {
   const { id, page } = req.query;
 
   try {
-    // POST — создание статьи
-    if (req.method === "POST") {
-      const { title, content } = req.body;
-
-      if (!title || !content) {
-        return res.status(400).json({ message: "Все поля обязательны!" });
-      }
-
-      const newPost = await BlogPost.create({ title, content });
-
-      return res
-        .status(201)
-        .json({ message: "Запись опубликована", data: newPost });
-    }
-
     // GET — получение одного поста
     if (req.method === "GET") {
       if (id) {

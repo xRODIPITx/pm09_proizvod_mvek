@@ -8,7 +8,7 @@ export default function AdminOrders() {
   }, []);
 
   async function fetchOrders() {
-    const res = await fetch("/api/orders/all");
+    const res = await fetch("/api/orders");
     const data = await res.json();
     setOrders(data.data);
   }

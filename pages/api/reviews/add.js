@@ -7,8 +7,8 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const { productId, rating, comment, user } = req.body;
 
-    if (!productId || !rating || !comment || !user) {
-      return res.status(400).json({ message: "Отзыв не может быть пустым" });
+    if (!productId || !rating || !user) {
+      return res.status(400).json({ message: "Данные не указаны" });
     }
 
     try {
