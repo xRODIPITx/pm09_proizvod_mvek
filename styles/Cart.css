@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .CartContent {
     min-height: calc(100vh - 160px - 50px);
     padding: 10px;
@@ -67,4 +67,4 @@
   .CartContent {
     grid-template-columns: repeat(1, 1fr);
   }
-}
+} */

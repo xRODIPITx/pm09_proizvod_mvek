@@ -42,9 +42,7 @@ export default function ProductCart({
       <td>
         <img src={image} alt={header} style={{ width: "60px" }} />
       </td>
-
       <td>{header}</td>
-
       <td>{price} ₽</td>
 
       <td>

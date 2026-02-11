@@ -23,27 +23,6 @@ export default function ProductPage({
   const router = useRouter();
   const { id } = router.query;
 
-  function addToCart() {
-    if (!product) return;
-
-    const index = cart.findIndex((value) => value.id === id);
-
-    if (index === -1) {
-      setCart((prevState) => [
-        ...prevState,
-        { id, image, header, price, qty: 1 },
-      ]);
-      setCartPrice((current) => current + price);
-      setCartQty((current) => current + 1);
-    } else {
-      return;
-    }
-    setTimeout(() => {
-      setMessage("Товар добавлен в корзину.");
-      setModalBox("MessageBox");
-    }, 100);
-  }
-
   // Загрузка информации о товаре
   useEffect(() => {
     if (!id) return;
@@ -51,11 +30,14 @@ export default function ProductPage({
     fetch(`/api/products?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log("Product Data:", data);
-        setProduct(data.data);
+        // Проверка на наличие _id
+        if (data.productData && data.productData._id) {
+          setProduct(data.productData);
+        } else {
+          console.error("Продукт не найден:", data);
+        }
       });
   }, [id]);
-
   // Загрузка отзывов с сервера
   useEffect(() => {
     // Запрос к API только если id определено
@@ -68,15 +50,15 @@ export default function ProductPage({
   const fetchReviews = async () => {
     const res = await fetch(`/api/reviews?productId=${id}`);
     const data = await res.json();
-    setReviews(data.data);
+    setReviews(data.reviewsData);
 
     // Рассчитываем средний рейтинг
-    if (data.data.length > 0) {
-      const totalRating = data.data.reduce(
+    if (data.reviewsData.length > 0) {
+      const totalRating = data.reviewsData.reduce(
         (acc, review) => acc + review.rating,
         0,
       );
-      const avgRating = totalRating / data.data.length;
+      const avgRating = totalRating / data.reviewsData.length;
       setAverageRating(avgRating.toFixed(1)); // Округляем до одного знака после запятой
     }
   };
@@ -120,6 +102,47 @@ export default function ProductPage({
   };
 
   if (!product) return <p>Загрузка...</p>;
+
+  function addToCart() {
+    if (!product) return;
+
+    if (
+      !product ||
+      !product._id ||
+      !product.image ||
+      !product.header ||
+      !product.price
+    ) {
+      console.error(
+        "Недостаточные данные для добавления товара в корзину",
+        product,
+      );
+      return;
+    }
+
+    const index = cart.findIndex((value) => value.id === product._id);
+
+    if (index === -1) {
+      setCart((prevState) => [
+        ...prevState,
+        {
+          id: product._id,
+          image: product.image,
+          header: product.header,
+          price: product.price,
+          qty: 1,
+        },
+      ]);
+      setCartPrice((current) => current + price);
+      setCartQty((current) => current + 1);
+    } else {
+      return;
+    }
+    setTimeout(() => {
+      setMessage("Товар добавлен в корзину.");
+      setModalBox("MessageBox");
+    }, 100);
+  }
 
   function AddToCartButton() {
     if (token && token !== null && token !== undefined) {

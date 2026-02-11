@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
   try {
     const reviews = await Review.find({ productId }).sort({ createdAt: -1 }); // Сортировка по дате, новые первыми
-    res.status(200).json({ data: reviews });
+    res.status(200).json({ reviewsData: reviews });
   } catch (err) {
     res.status(500).json({ message: "Ошибка получения отзывов", err });
   }

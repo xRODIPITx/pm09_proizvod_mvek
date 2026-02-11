@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       if (!product) {
         return res.status(404).json({ message: "Товар не найден" });
       }
-      return res.status(200).json({ data: product });
+      return res.status(200).json({ productData: product });
     } catch (error) {
       console.error(error);
       return res.status(500).json({
