@@ -46,6 +46,7 @@ export default function BlogPostAdd({ setModalBox, setMessage }) {
         placeholder="Содержимое поста"
         type="text"
         rows="5"
+        className="blogContent"
       />
       <button id="send" onClick={() => AddBlogPost()}>
         Создать

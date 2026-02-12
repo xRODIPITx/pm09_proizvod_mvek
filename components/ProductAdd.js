@@ -59,6 +59,7 @@ export default function ProductAdd({ setModalBox, setMessage }) {
         placeholder="Описание товара"
         type="text"
         rows="5"
+        className="productDescription"
       />
       <input
         id="price"
