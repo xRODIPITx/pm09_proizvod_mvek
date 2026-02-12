@@ -1,4 +1,5 @@
 import ProductCart from "../components/ProductCart";
+import { useEffect } from "react";
 
 export default function Cart({
   cart,
@@ -7,15 +8,22 @@ export default function Cart({
   setCart,
   setCartQty,
   setCartPrice,
-  setMessage,
   setModalBox,
 }) {
+  // Очищает корзину
   function clearCart() {
     setCart([]);
     setCartQty(0);
     setCartPrice(0);
   }
 
+  // Обновление стоимости корзины
+  function updateCartPrice() {
+    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    setCartPrice(total);
+  }
+
+  // Показывает кнопку оформления заказа, если есть товары в корзине
   function ShowOrderButton() {
     if (cartQty > 0) {
       return (
@@ -30,6 +38,11 @@ export default function Cart({
       );
     }
   }
+
+  // ОБновление стоимости корзины, если cart изменился
+  useEffect(() => {
+    updateCartPrice();
+  }, [cart]); // Зависит от изменений в cart
 
   return (
     <div className="Cart">
@@ -62,7 +75,6 @@ export default function Cart({
           ))}
         </tbody>
       </table>
-
       <p>Количество товаров: {cartQty}</p>
       <p>Общая стоимость товаров: {cartPrice}</p>
       <ShowOrderButton />

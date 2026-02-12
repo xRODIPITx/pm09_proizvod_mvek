@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Product from "../components/Product";
-import Link from "next/link";
 
 export default function Main({
   setCart,
