@@ -8,13 +8,15 @@ export default function Main({
   setCartQty,
   cart,
   token,
-  setModalBox,
   setMessage,
+  setModalBox,
 }) {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Все");
+  const [sortOption, setSortOption] = useState("price-asc"); // Новый формат для комбинированного параметра сортировки
   const router = useRouter();
   const search = router.query.search || "";
+  const [ratings, setRatings] = useState({});
 
   const categories = [
     "Все",
@@ -48,6 +50,32 @@ export default function Main({
       ? products
       : products.filter((item) => item.category === selectedCategory);
 
+  // Обработчик для получения рейтинга
+  const handleRatingLoaded = (id, rating) => {
+    setRatings((prevRatings) => ({ ...prevRatings, [id]: rating }));
+  };
+
+  // Функция для сортировки товаров
+  const sortProducts = (products, option) => {
+    return [...products].sort((a, b) => {
+      const [criterion, direction] = option.split("-");
+      let comparison = 0;
+
+      if (criterion === "order") {
+        comparison = a._id.localeCompare(b._id);
+      } else if (criterion === "price") {
+        comparison = a.price - b.price;
+      } else if (criterion === "header") {
+        comparison = a.header.localeCompare(b.header);
+      }
+
+      return direction === "asc" ? comparison : -comparison;
+    });
+  };
+
+  // Отсортированные товары
+  const sortedProducts = sortProducts(filteredProducts, sortOption);
+
   return (
     <div className="Main">
       <div className="section-title">
@@ -70,6 +98,24 @@ export default function Main({
         </select>
       </div>
 
+      {/* Сортировка по критерию и направлению (объединены в одно меню) */}
+      <div className="sorting-controls">
+        <label>Сортировка:</label>
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+        >
+          <option value="order-asc">По порядку (сначала старые)</option>
+          <option value="order-desc">По порядку (сначала новые)</option>
+          <option value="price-asc">Цена (по возрастанию)</option>
+          <option value="price-desc">Цена (по убыванию)</option>
+          <option value="rating-asc">Рейтинг (по возрастанию)</option>
+          <option value="rating-desc">Рейтинг (по убыванию)</option>
+          <option value="header-asc">Название (по возрастанию)</option>
+          <option value="header-desc">Название (по убыванию)</option>
+        </select>
+      </div>
+
       {search && (
         <p style={{ marginTop: "10px" }}>
           Результаты поиска: <strong>{search}</strong>
@@ -77,12 +123,12 @@ export default function Main({
       )}
 
       <div className="prodGrid">
-        {filteredProducts.map((item) => (
+        {sortedProducts.map((item) => (
           <Product
             key={item._id}
             id={item._id}
             header={item.header}
-            image="/images/placeholder.png"
+            image={item.image}
             price={item.price}
             setCart={setCart}
             setCartPrice={setCartPrice}
@@ -91,6 +137,7 @@ export default function Main({
             token={token}
             setMessage={setMessage}
             setModalBox={setModalBox}
+            onRatingLoaded={handleRatingLoaded}
           />
         ))}
       </div>

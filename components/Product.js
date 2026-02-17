@@ -13,6 +13,7 @@ export default function Product({
   setMessage,
   setModalBox,
   token,
+  onRatingLoaded, // Пропс для передачи рейтинга в родительский компонент
 }) {
   const [averageRating, setAverageRating] = useState(null);
 
@@ -30,8 +31,12 @@ export default function Product({
         );
         const avgRating = totalRating / data.reviewsData.length;
         setAverageRating(avgRating.toFixed(1)); // Округляем до 1 знака после запятой
+
+        // Передаем рейтинг родительскому компоненту
+        onRatingLoaded(id, avgRating);
       } else {
-        setAverageRating("-"); // Если нет отзывов, показываем прочерк
+        setAverageRating("-");
+        onRatingLoaded(id, null); // Если нет отзывов, показываем прочерк
       }
     } catch (error) {
       console.error("Ошибка получения отзывов:", error);

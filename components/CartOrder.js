@@ -17,7 +17,7 @@ export default function CartOrder({
     address: "",
   });
 
-  function handlePhoneInput(e) {
+  function numberFormat(e) {
     let value = e.target.value.replace(/\D/g, ""); // убираем всё кроме цифр
 
     if (value.startsWith("8")) {
@@ -39,7 +39,7 @@ export default function CartOrder({
     setBuyer({ ...buyer, phone: formatted });
   }
 
-  async function handleSubmit() {
+  async function submit() {
     if (!buyer.name || !buyer.phone || !buyer.address) {
       alert("Заполните все поля");
       return;
@@ -113,7 +113,7 @@ export default function CartOrder({
         type="tel"
         placeholder="+7 (___) ___-__-__"
         value={buyer.phone}
-        onChange={(e) => handlePhoneInput(e)}
+        onChange={(e) => numberFormat(e)}
         maxLength={18}
         required
       />
@@ -127,7 +127,7 @@ export default function CartOrder({
       />
 
       <div>
-        <button className="order-btn" onClick={handleSubmit}>
+        <button className="order-btn" onClick={submit}>
           Подтвердить
         </button>
 

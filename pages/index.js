@@ -13,6 +13,7 @@ export default function Main({
 }) {
   const [products, setProducts] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [ratings, setRatings] = useState({});
 
   useEffect(() => {
     const api = "/api/products";
@@ -36,6 +37,11 @@ export default function Main({
 
     fetchPosts();
   }, []);
+
+  // Функция для получения рейтинга товара
+  const handleRatingLoaded = (id, rating) => {
+    setRatings((prevRatings) => ({ ...prevRatings, [id]: rating }));
+  };
 
   return (
     <div className="Main">
@@ -63,6 +69,7 @@ export default function Main({
             token={token}
             setMessage={setMessage}
             setModalBox={setModalBox}
+            onRatingLoaded={handleRatingLoaded}
           />
         ))}
       </div>
