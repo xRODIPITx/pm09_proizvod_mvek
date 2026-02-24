@@ -21,7 +21,8 @@
   max-width: 400px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #a6b89d;
 }
 
 /* Информация о товаре */
@@ -47,6 +48,13 @@
   text-align: justify;
 }
 
+.buy-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /* Цена товара */
 .product-info .price {
   font-size: 24px;
@@ -57,19 +65,22 @@
 
 /* Кнопка добавления в корзину */
 .add-to-cart {
-  background-color: #007bff;
-  color: white;
+  background-color: #b9d8c2;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
-  margin-top: 20px;
 }
 
 .add-to-cart:hover {
-  background-color: #0056b3;
+  background-color: #cbe2d0;
+}
+
+.add-to-cart:active {
+  background-color: #92a396;
 }
 
 /* Отзывы */
@@ -114,8 +125,8 @@
 
 /* Стиль для кнопки отправки отзыва */
 .review-form button {
-  background-color: #007bff;
-  color: white;
+  background-color: #b9d8c2;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
@@ -125,7 +136,11 @@
 }
 
 .review-form button:hover {
-  background-color: #0056b3;
+  background-color: #cbe2d0;
+}
+
+.review-form button:active {
+  background-color: #92a396;
 }
 
 /* Отзывы */

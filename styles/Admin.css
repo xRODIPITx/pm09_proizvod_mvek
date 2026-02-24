@@ -19,6 +19,7 @@
   background: #fff;
   width: 280px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #a6b89d;
 }
 
 .admin-card button,
@@ -141,6 +142,7 @@ table td {
   background: #fff;
   width: 280px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #a6b89d;
 }
 
 .stats-cont {
@@ -163,6 +165,6 @@ table td {
 
 .stats-item strong {
   font-size: 18px;
-  color: #007bff;
+  color: #606c38;
   margin-left: 10px;
 }

@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   z-index: 1001;
+  border: 1px solid #a6b89d;
 }
 
 .ModalBox h1 {
@@ -29,7 +30,7 @@
 .ModalBox button {
   width: 40%;
   height: 30px;
-  background-color: rgb(161, 216, 248);
+  background-color: #b9d8c2;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -37,7 +38,7 @@
 }
 
 .ModalBox button:hover {
-  background-color: rgb(71, 187, 255);
+  background-color: #cbe2d0;
 }
 
 .echo {
