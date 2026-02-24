@@ -174,8 +174,10 @@ export default function ProductPage({
         <div className="product-info">
           <h1>{product.header}</h1>
           <p>{product.description}</p>
-          <p className="price">{product.price} ₽</p>
-          <AddToCartButton />
+          <div className="buy-area">
+            <p className="price">{product.price} ₽</p>
+            <AddToCartButton />
+          </div>
         </div>
       </div>
 
