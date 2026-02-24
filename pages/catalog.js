@@ -13,7 +13,7 @@ export default function Main({
 }) {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Все");
-  const [sortOption, setSortOption] = useState("price-asc"); // Новый формат для комбинированного параметра сортировки
+  const [sortOption, setSortOption] = useState("price-asc");
   const router = useRouter();
   const search = router.query.search || "";
   const [ratings, setRatings] = useState({});
@@ -98,7 +98,7 @@ export default function Main({
         </select>
       </div>
 
-      {/* Сортировка по критерию и направлению (объединены в одно меню) */}
+      {/* Сортировка по критерию и направлению */}
       <div className="sorting-controls">
         <label>Сортировка:</label>
         <select
@@ -118,7 +118,7 @@ export default function Main({
 
       {search && (
         <p style={{ marginTop: "10px" }}>
-          Результаты поиска: <strong>{search}</strong>
+          Поиск по запросу: <strong>{search}</strong>
         </p>
       )}
 
