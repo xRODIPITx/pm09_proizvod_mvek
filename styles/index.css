@@ -32,6 +32,7 @@ button.danger {
   border-radius: 10px;
   margin: 5px;
   text-align: center;
+  font-size: 16px;
 }
 
 button.danger:hover {
