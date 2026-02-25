@@ -31,3 +31,23 @@
   font-size: 14pt;
   border-style: none;
 }
+
+/* Мои заказы */
+.Cabinet h2 {
+  margin-bottom: 10px;
+}
+
+.Cabinet .order {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+  width: 400px;
+}
+
+.Cabinet .order div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .Cabinet .order button {
+} */

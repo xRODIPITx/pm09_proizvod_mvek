@@ -1,0 +1,12 @@
+.login-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#logError {
+  text-align: center;
+  margin-top: 10px;
+}
