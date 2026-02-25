@@ -1,12 +1,18 @@
+import { useState } from "react";
+
 export default function Login({ setModalBox, setMessage, setToken }) {
+  const [error, setError] = useState(""); // Состояние для ошибки
+
   function Log() {
     const login = document.getElementById("login").value;
     const password = document.getElementById("password").value;
 
-    let message;
+    // Очистка предыдущих ошибок
+    setError("");
 
-    if (password.length === 0) {
-      document.getElementById("loginError").innerText = "Ошибка ввода данных";
+    // Проверка на пустые поля
+    if (password.length === 0 || login.length === 0) {
+      setError("Ошибка ввода данных. Пожалуйста, заполните все поля.");
       return;
     }
 
@@ -14,7 +20,6 @@ export default function Login({ setModalBox, setMessage, setToken }) {
       login: login,
       password: password,
     };
-    // console.log(data);
 
     const api = "/api/login";
 
@@ -27,22 +32,33 @@ export default function Login({ setModalBox, setMessage, setToken }) {
     })
       .then((result) => result.json())
       .then((result) => {
-        message = result.message;
-        if (result.token !== undefined && typeof window !== "undefined") {
+        if (result.token) {
+          // Если токен есть, сохраняем его и показываем успешное сообщение
           localStorage.setItem("token", result.token);
           setToken(result.token);
-          setMessage(message);
+          setMessage(result.message);
           setModalBox("MessageBox");
+        } else {
+          // Если токен отсутствует, показываем ошибку
+          setError(result.message || "Ошибка при входе");
         }
+      })
+      .catch((err) => {
+        // В случае сетевых ошибок или других проблем
+        setError("Ошибка при подключении к серверу. Попробуйте снова.");
+        console.error(err);
       });
   }
 
   return (
-    <>
+    <div className="login-cont">
       <h1>Логин</h1>
       <input id="login" type="text" placeholder="Логин" />
       <input id="password" type="password" placeholder="Пароль" />
       <button onClick={Log}>Войти</button>
-    </>
+
+      {/* Отображение ошибки, если она есть */}
+      {error && <p id="logError">{error}</p>}
+    </div>
   );
 }
