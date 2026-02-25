@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
+import { useRouter } from "next/router";
 
 export default function Cabinet({ token }) {
   const [localToken, setLocalToken] = useState(token || null);
   const [email, setEmail] = useState(null);
   const [orders, setOrders] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     if (!localToken && typeof window !== "undefined") {
@@ -86,6 +88,18 @@ export default function Cabinet({ token }) {
       });
   }
 
+  async function deleteOrder(id) {
+    if (!confirm("Отменить заказ?")) return;
+
+    const res = await fetch(`/api/orders/delete?id=${id}`, {
+      method: "DELETE",
+    });
+
+    const data = await res.json();
+    alert(data.message);
+    router.reload();
+  }
+
   // ПОльзователь не авторизован
   if (!email) {
     return (
@@ -121,11 +135,14 @@ export default function Cabinet({ token }) {
       <p id="errorMessage"></p>
 
       <h2>Мои заказы</h2>
+
       {orders.length === 0 && <p>Заказов пока нет</p>}
+
       {orders.map((o) => (
         <div key={o._id} className="order">
           <p>Дата: {o.createdAt.substring(0, 10)}</p>
           <p>Сумма: {o.total} ₽</p>
+          <p>Адрес: {o.address}</p>
           <ul>
             {o.items.map((i) => (
               <li key={i.productId}>
@@ -133,6 +150,11 @@ export default function Cabinet({ token }) {
               </li>
             ))}
           </ul>
+          <div>
+            <button className="danger" onClick={() => deleteOrder(o._id)}>
+              Отменить
+            </button>
+          </div>
         </div>
       ))}
     </div>
