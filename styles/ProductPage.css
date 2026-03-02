@@ -3,7 +3,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: "Arial", sans-serif;
 }
 
 /* Контейнер с картинкой и информацией о товаре */
@@ -20,7 +19,7 @@
   width: 100%;
   max-width: 400px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid #a6b89d;
 }
@@ -69,7 +68,7 @@
   color: black;
   padding: 12px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
@@ -95,7 +94,7 @@
   margin-top: 30px;
   padding: 20px;
   background-color: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,7 +117,7 @@
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-bottom: 15px;
   resize: vertical;
 }
@@ -129,7 +128,7 @@
   color: black;
   padding: 12px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
@@ -148,7 +147,7 @@
   background-color: #fff;
   padding: 20px;
   margin-bottom: 15px;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -183,7 +182,7 @@
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;

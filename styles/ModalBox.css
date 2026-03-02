@@ -2,7 +2,7 @@
   width: 400px;
   height: auto;
   min-height: 150px;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: white;
   padding: 10px 50px 20px 50px;
   display: flex;
@@ -32,7 +32,7 @@
   height: 30px;
   background-color: #b9d8c2;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   margin: 10px 10px 0 10px;
 }

@@ -15,7 +15,7 @@
 
 .admin-card {
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 6px;
   background: #fff;
   width: 280px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -138,7 +138,7 @@ table td {
 /*Stats*/
 .stats {
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 6px;
   background: #fff;
   width: 280px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

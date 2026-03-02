@@ -4,14 +4,14 @@
   box-shadow: 0 0 3px 3px #dfdfdf;
   margin: auto;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: 1px solid #a6b89d;
 }
 
 .Product img {
   width: 200px;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .Product h1 {
@@ -43,7 +43,7 @@
   height: 45px;
   background-color: #b9d8c2;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
   padding: 12px 20px;

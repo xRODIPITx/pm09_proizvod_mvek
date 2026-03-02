@@ -14,7 +14,7 @@
   height: 50px;
   width: 200px;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: 16pt;
   margin: 20px;
 }
@@ -27,7 +27,7 @@
   font-size: 18px;
   font-weight: bold;
   border: 1px solid #a6b89d; /*  Зеленый оттенок для границы */
-  border-radius: 5px;
+  border-radius: 6px;
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeIn 1s forwards;
