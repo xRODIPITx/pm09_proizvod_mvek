@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { jwtDecode } from "jwt-decode";
 
 export default function Blog({ token, setModalBox, setMessage }) {
   const [posts, setPosts] = useState([]);
@@ -16,15 +17,22 @@ export default function Blog({ token, setModalBox, setMessage }) {
   }, []);
 
   function AddBlogPost({ token, setModalBox }) {
-    if (token !== null) {
+    if (token && token !== "undefined") {
+      const decoded = jwtDecode(token);
+      const role = decoded.role;
+
       return (
         <>
-          <button
-            className="addButton"
-            onClick={() => setModalBox("BlogPostAdd")}
-          >
-            Добавить блог
-          </button>
+          {role === "admin" ? (
+            <button
+              className="addButton"
+              onClick={() => setModalBox("BlogPostAdd")}
+            >
+              Добавить блог
+            </button>
+          ) : (
+            <></>
+          )}
         </>
       );
     }
