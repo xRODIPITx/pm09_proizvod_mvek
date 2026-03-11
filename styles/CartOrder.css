@@ -11,9 +11,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.order-form input {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}

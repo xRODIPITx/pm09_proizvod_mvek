@@ -36,3 +36,9 @@ button.danger {
 button.danger:hover {
   background: #b94743;
 }
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding-left: 10px;
+}
