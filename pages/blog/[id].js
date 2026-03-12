@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { jwtDecode } from "jwt-decode";
 
-export default function BlogPost() {
+export default function BlogPost({ token, setModalBox, setMessage }) {
   const router = useRouter();
   const { id } = router.query;
   const [post, setPost] = useState(null);
@@ -28,7 +29,26 @@ export default function BlogPost() {
     router.push("/blog");
   }
 
-  if (!id || !post) return <p>Загрузка...</p>;
+  if (!id || !post) return <p className="loading">Загрузка...</p>;
+
+  function IsAdmin({ token }) {
+    if (token && token !== "undefined") {
+      const decoded = jwtDecode(token);
+      const role = decoded.role;
+
+      return (
+        <>
+          {role === "admin" ? (
+            <button className="danger" onClick={() => deleteBlogPost(post._id)}>
+              Удалить
+            </button>
+          ) : (
+            <></>
+          )}
+        </>
+      );
+    }
+  }
 
   return (
     <div className="blog-page">
@@ -37,9 +57,12 @@ export default function BlogPost() {
         <h4>{post.createdAt.substring(0, 16)}</h4>
       </div>
       <h4 className="blog-content">{post.content}</h4>
-      <button className="danger" onClick={() => deleteBlogPost(post._id)}>
-        Удалить
-      </button>
+
+      <IsAdmin
+        token={token}
+        setModalBox={setModalBox}
+        setMessage={setMessage}
+      />
     </div>
   );
 }
