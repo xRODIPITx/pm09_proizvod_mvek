@@ -101,7 +101,7 @@ export default function ProductPage({
     }
   };
 
-  if (!product) return <p>Загрузка...</p>;
+  if (!product) return <p className="loading">Загрузка...</p>;
 
   function addToCart() {
     if (!product) return;

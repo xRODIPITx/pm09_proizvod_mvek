@@ -42,3 +42,8 @@ input {
   border-radius: 6px;
   padding-left: 10px;
 }
+
+.loading {
+  min-height: calc(100vh - 50px - 50px);
+  text-align: center;
+}

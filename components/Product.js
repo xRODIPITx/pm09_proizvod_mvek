@@ -91,7 +91,7 @@ export default function Product({
       <Link href={`/product/${id}`}>
         <img src={image} alt={header} />
         <h1 title={header}>{header}</h1>
-        <p className="avg-rating">
+        <p className="avg-rating loading">
           Рейтинг: {averageRating === null ? "Загрузка..." : averageRating} /
           5.0
         </p>
