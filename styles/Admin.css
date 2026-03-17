@@ -85,6 +85,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   background: white;
+  margin-bottom: 40px;
 }
 
 table th,
