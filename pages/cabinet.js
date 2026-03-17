@@ -30,7 +30,7 @@ export default function Cabinet({ token }) {
     if (!token) return;
     const userId = jwtDecode(token).id;
 
-    fetch(`/api/orders/user?userId=${userId}`)
+    fetch(`/api/orders?userId=${userId}`)
       .then((res) => res.json())
       .then((data) => setOrders(data.data));
   }, [token]);
