@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import User from "../../../models/User.js";
 
 export default async function handler(req, res) {
-  await connectDB(); // Подключение к базе данных
+  await connectDB();
 
   if (req.method === "POST") {
     const { token, email } = req.body;
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       const user = await User.findOneAndUpdate(
         { login },
         { email },
-        { returnOriginal: false }
+        { returnOriginal: false },
       );
 
       if (!user) {

@@ -20,13 +20,13 @@
 }
 
 .banner {
-  background-color: #b9d8c2; /* Светло-зеленый фон, ассоциируется с природой */
+  background-color: #b9d8c2;
   color: #283618;
   padding: 15px;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  border: 1px solid #a6b89d; /*  Зеленый оттенок для границы */
+  border: 1px solid #a6b89d;
   border-radius: 6px;
   margin-bottom: 20px;
   opacity: 0;
