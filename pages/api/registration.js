@@ -31,7 +31,7 @@ export default async function handler(req, res) {
         user._id,
         user.login,
         user.email,
-        user.role
+        user.role,
       );
 
       return res.status(201).json({
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         token,
       });
     } catch (error) {
-      if (err.code === 11000) {
+      if (error.code === 11000) {
         return res.status(409).json({ message: "Пользователь уже существует" });
       }
       return res
