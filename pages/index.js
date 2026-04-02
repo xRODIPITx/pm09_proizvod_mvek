@@ -77,7 +77,6 @@ export default function Main({
         Открыть каталог
       </Link>
 
-      {/* Добавляем блок с последними статьями */}
       <div className="section-title">
         <h1>Последние статьи</h1>
       </div>
@@ -93,7 +92,7 @@ export default function Main({
         ))}
       </div>
 
-      {/* Ссылка на полную страницу блога */}
+      {/* Ссылка на страницу блога */}
       <div className="blog-link">
         <Link href="/blog">Посмотреть все статьи</Link>
       </div>
