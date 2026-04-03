@@ -1,8 +1,14 @@
-export default function Registration({ setModalBox, setMessage }) {
+import { useState } from "react";
+
+export default function Registration({ setModalBox, setMessage, setToken }) {
+  const [error, setError] = useState(""); // Состояние для ошибки
+
   function Reg() {
     const login = document.getElementById("login").value;
     const password = document.getElementById("password").value;
     const email = document.getElementById("email").value;
+
+    setError("");
 
     const emailRegex = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 
@@ -17,8 +23,6 @@ export default function Registration({ setModalBox, setMessage }) {
         "Вы ввели данные неправильно!";
       return;
     }
-
-    let message;
 
     const data = {
       login: login,
@@ -38,9 +42,21 @@ export default function Registration({ setModalBox, setMessage }) {
     })
       .then((result) => result.json())
       .then((result) => {
-        message = result.message;
-        setMessage(message);
-        setModalBox("MessageBox");
+        if (result.token) {
+          // Сохраняет токен если он есть и показывает сообщение
+          localStorage.setItem("token", result.token);
+          setToken(result.token);
+          setMessage(result.message);
+          setModalBox("MessageBox");
+        } else {
+          // Показывает ошибку если токен отсутствует
+          setError(result.message || "Ошибка регистрации");
+        }
+      })
+      .catch((err) => {
+        // На случай сетевых ошибок или других проблем
+        setError("Ошибка при подключении к серверу. Попробуйте снова.");
+        console.error(err);
       });
   }
 
@@ -63,7 +79,7 @@ export default function Registration({ setModalBox, setMessage }) {
       />
       <input id="email" type="email" placeholder="Адрес почты" required />
       <button onClick={Reg}>Сохранить</button>
-      <p id="regError"></p>
+      {error && <p id="formError">{error}</p>}
     </>
   );
 }

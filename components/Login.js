@@ -33,18 +33,18 @@ export default function Login({ setModalBox, setMessage, setToken }) {
       .then((result) => result.json())
       .then((result) => {
         if (result.token) {
-          // Если токен есть, сохраняем его и показываем успешное сообщение
+          // Сохраняет токен если он есть и показывает сообщение
           localStorage.setItem("token", result.token);
           setToken(result.token);
           setMessage(result.message);
           setModalBox("MessageBox");
         } else {
-          // Если токен отсутствует, показываем ошибку
+          // Показывает ошибку если токен отсутствует
           setError(result.message || "Ошибка при входе");
         }
       })
       .catch((err) => {
-        // В случае сетевых ошибок или других проблем
+        // На случай сетевых ошибок или других проблем
         setError("Ошибка при подключении к серверу. Попробуйте снова.");
         console.error(err);
       });
@@ -58,7 +58,7 @@ export default function Login({ setModalBox, setMessage, setToken }) {
       <button onClick={Log}>Войти</button>
 
       {/* Отображение ошибки, если она есть */}
-      {error && <p id="logError">{error}</p>}
+      {error && <p id="formError">{error}</p>}
     </div>
   );
 }

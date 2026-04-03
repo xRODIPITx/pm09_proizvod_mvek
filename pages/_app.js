@@ -80,7 +80,11 @@ export default function MyApp({ Component, pageProps }) {
 
     Registration: (
       <ModalBox setModalBox={setModalBox}>
-        <Registration setModalBox={setModalBox} setMessage={setMessage} />
+        <Registration
+          setModalBox={setModalBox}
+          setMessage={setMessage}
+          setToken={setToken}
+        />
       </ModalBox>
     ),
 
