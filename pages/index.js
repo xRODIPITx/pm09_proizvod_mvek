@@ -8,12 +8,18 @@ export default function Main({
   setCartQty,
   cart,
   token,
-  setModalBox,
   setMessage,
+  setModalBox,
 }) {
   const [products, setProducts] = useState([]);
   const [posts, setPosts] = useState([]);
   const [ratings, setRatings] = useState({});
+  const [sortOption, setSortOption] = useState("rating-desc");
+
+  // Обработчик для получения рейтинга
+  const handleRatingLoaded = (id, rating) => {
+    setRatings((prevRatings) => ({ ...prevRatings, [id]: rating }));
+  };
 
   useEffect(() => {
     const api = "/api/products";
@@ -25,8 +31,7 @@ export default function Main({
     })
       .then((result) => result.json())
       .then((result) => {
-        // console.log(result);
-        setProducts(result.data.slice(0, 5));
+        setProducts(result.data);
       });
 
     const fetchPosts = async () => {
@@ -38,10 +43,32 @@ export default function Main({
     fetchPosts();
   }, []);
 
-  // Функция для получения рейтинга товара
-  const handleRatingLoaded = (id, rating) => {
-    setRatings((prevRatings) => ({ ...prevRatings, [id]: rating }));
+  // Функция для сортировки товаров по критерию и направлению
+  const sortProducts = (products, option) => {
+    return [...products].sort((a, b) => {
+      const [criterion, direction] = option.split("-");
+      let comparison = 0;
+
+      const ratingA = ratings[a._id] || 0;
+      const ratingB = ratings[b._id] || 0;
+      const ratingsCountA = a.ratingsCount || 0;
+      const ratingsCountB = b.ratingsCount || 0;
+
+      if (criterion === "rating") {
+        comparison = ratingA - ratingB;
+      } else if (criterion === "ratingsCount") {
+        comparison = ratingsCountA - ratingsCountB;
+      }
+
+      return direction === "asc" ? comparison : -comparison;
+    });
   };
+
+  // Сортированные товары
+  const sortedProducts = sortProducts(products, sortOption);
+
+  // Отображаем только первые 5 товаров
+  const topProducts = sortedProducts.slice(0, 5);
 
   return (
     <div className="Main">
@@ -51,16 +78,18 @@ export default function Main({
           пикника и туризма.
         </p>
       </div>
+
       <div className="section-title">
         <h1>Рекомендуемые товары</h1>
       </div>
+
       <div className="prodGrid">
-        {products.map((item) => (
+        {topProducts.map((item) => (
           <Product
             key={item._id}
             id={item._id}
             header={item.header}
-            image="/images/placeholder.png"
+            image={item.image}
             price={item.price}
             setCart={setCart}
             setCartPrice={setCartPrice}
@@ -73,6 +102,7 @@ export default function Main({
           />
         ))}
       </div>
+
       <Link href={"/catalog"} className="read-more">
         Открыть каталог
       </Link>
@@ -80,6 +110,7 @@ export default function Main({
       <div className="section-title">
         <h1>Последние статьи</h1>
       </div>
+
       <div className="blog-posts">
         {posts.map((post) => (
           <div key={post._id} className="blog-post">

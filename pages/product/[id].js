@@ -114,7 +114,7 @@ export default function ProductPage({
       !product.price
     ) {
       console.error(
-        "Недостаточные данные для добавления товара в корзину",
+        "Недостаточно данных для добавления товара в корзину",
         product,
       );
       return;

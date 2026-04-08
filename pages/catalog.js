@@ -13,7 +13,7 @@ export default function Main({
 }) {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Все");
-  const [sortOption, setSortOption] = useState("price-asc");
+  const [sortOption, setSortOption] = useState("rating-desc");
   const router = useRouter();
   const search = router.query.search || "";
   const [ratings, setRatings] = useState({});
