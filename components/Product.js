@@ -16,6 +16,7 @@ export default function Product({
   onRatingLoaded, // Пропс для передачи рейтинга в родительский компонент
 }) {
   const [averageRating, setAverageRating] = useState(null);
+  const [reviewsCount, setReviewsCount] = useState(0);
 
   // Функция для получения отзывов и вычисления среднего рейтинга
   const fetchReviews = async () => {
@@ -30,12 +31,15 @@ export default function Product({
           0,
         );
         const avgRating = totalRating / data.reviewsData.length;
-        setAverageRating(avgRating.toFixed(1)); // Округляет до 1 знака после запятой
+        const avgRatingRounded = Number(avgRating.toFixed(1));
+        setAverageRating(avgRatingRounded); // Округляет до 1 знака после запятой
+        setReviewsCount(data.reviewsData.length);
 
         // Передает рейтинг родительскому компоненту
-        onRatingLoaded(id, avgRating);
+        onRatingLoaded(id, avgRatingRounded);
       } else {
         setAverageRating("-");
+        setReviewsCount(0);
         onRatingLoaded(id, null);
       }
     } catch (error) {
@@ -92,8 +96,8 @@ export default function Product({
         <img src={image} alt={header} />
         <h1 title={header}>{header}</h1>
         <p className="avg-rating">
-          Рейтинг: {averageRating === null ? "Загрузка..." : averageRating} /
-          5.0
+          Рейтинг: {averageRating === null ? "Загрузка..." : averageRating}
+          {reviewsCount > 0 ? ` (${reviewsCount})` : ""}
         </p>
         <p className="price">{`${price} руб`}</p>
       </Link>

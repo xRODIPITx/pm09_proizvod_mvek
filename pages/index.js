@@ -67,7 +67,7 @@ export default function Main({
   // Сортированные товары
   const sortedProducts = sortProducts(products, sortOption);
 
-  // Отображаем только первые 5 товаров
+  // Отображать только первые 5 товаров
   const topProducts = sortedProducts.slice(0, 5);
 
   return (
