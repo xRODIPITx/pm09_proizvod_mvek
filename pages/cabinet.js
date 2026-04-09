@@ -143,6 +143,7 @@ export default function Cabinet({ token }) {
           <p>Дата: {o.createdAt.substring(0, 10)}</p>
           <p>Сумма: {o.total} ₽</p>
           <p>Адрес: {o.address}</p>
+          <p>Контактный номер: {o.phone}</p>
           <ul>
             {o.items.map((i) => (
               <li key={i.productId}>
