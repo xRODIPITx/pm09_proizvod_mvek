@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   await connectDB();
 
   if (req.method === "POST") {
-    const { productId, rating, comment, user } = req.body;
+    const { productId, rating, comment = "", user } = req.body;
 
     if (!productId || !rating || !user) {
       return res.status(400).json({ message: "Данные не указаны" });
