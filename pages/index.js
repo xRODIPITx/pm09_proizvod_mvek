@@ -43,21 +43,16 @@ export default function Main({
     fetchPosts();
   }, []);
 
-  // Функция для сортировки товаров по критерию и направлению
+  // Функция для сортировки товаров по рейтингу
   const sortProducts = (products, option) => {
     return [...products].sort((a, b) => {
       const [criterion, direction] = option.split("-");
       let comparison = 0;
 
-      const ratingA = ratings[a._id] || 0;
-      const ratingB = ratings[b._id] || 0;
-      const ratingsCountA = a.ratingsCount || 0;
-      const ratingsCountB = b.ratingsCount || 0;
-
       if (criterion === "rating") {
-        comparison = ratingA - ratingB;
-      } else if (criterion === "ratingsCount") {
-        comparison = ratingsCountA - ratingsCountB;
+        const aRating = ratings[a._id] || 0;
+        const bRating = ratings[b._id] || 0;
+        comparison = aRating - bRating;
       }
 
       return direction === "asc" ? comparison : -comparison;
