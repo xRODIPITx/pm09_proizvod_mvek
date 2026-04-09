@@ -1,0 +1,188 @@
+[{
+  "_id": {
+    "$oid": "69d4bde5fb7df6d15d4faad5"
+  },
+  "userId": "69cf99f3640039cfb13c0f39",
+  "items": [
+    {
+      "productId": "6968eb717dab7e287de4f582",
+      "header": "Палатка туристическая Trek 2",
+      "price": 8500,
+      "qty": 2,
+      "_id": {
+        "$oid": "69d4bde5fb7df6d15d4faad6"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f583",
+      "header": "Палатка кемпинговая SummerFamily 4",
+      "price": 15900,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d4bde5fb7df6d15d4faad7"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f584",
+      "header": "Палатка сверхлегкая SoloLight 1",
+      "price": 11200,
+      "qty": 3,
+      "_id": {
+        "$oid": "69d4bde5fb7df6d15d4faad8"
+      }
+    }
+  ],
+  "total": 66500,
+  "name": "test1",
+  "phone": "+7 (675) 467-84-76",
+  "address": "г. Самара, Дачная ул., д. 5 кв.151",
+  "createdAt": {
+    "$date": "2026-04-07T08:18:45.234Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d4be60fb7df6d15d4fab4a"
+  },
+  "userId": "69cf8ff137968cc3b5e530ae",
+  "items": [
+    {
+      "productId": "6968eb717dab7e287de4f599",
+      "header": "Тент универсальный 4x6м",
+      "price": 3200,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d4be60fb7df6d15d4fab4b"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f590",
+      "header": "Шампуры стальные 6шт",
+      "price": 700,
+      "qty": 2,
+      "_id": {
+        "$oid": "69d4be60fb7df6d15d4fab4c"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f591",
+      "header": "Термос стальной 1л",
+      "price": 1800,
+      "qty": 2,
+      "_id": {
+        "$oid": "69d4be60fb7df6d15d4fab4d"
+      }
+    }
+  ],
+  "total": 8200,
+  "name": "test312",
+  "phone": "+7 (987) 665-43-24",
+  "address": "г. Тамбов, Школьная ул., д. 12 кв.20",
+  "createdAt": {
+    "$date": "2026-04-07T08:20:48.379Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d77ebc78a53dbbea8e6dfd"
+  },
+  "userId": "695d32feadf443e8ccdbb4b4",
+  "items": [
+    {
+      "productId": "6968eb717dab7e287de4f584",
+      "header": "Палатка сверхлегкая SoloLight 1",
+      "price": 11200,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d77ebc78a53dbbea8e6dfe"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f59f",
+      "header": "Сетка антимоскитная для лица",
+      "price": 300,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d77ebc78a53dbbea8e6dff"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f591",
+      "header": "Термос стальной 1л",
+      "price": 1800,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d77ebc78a53dbbea8e6e00"
+      }
+    }
+  ],
+  "total": 13300,
+  "name": "Nikita",
+  "phone": "+7 (496) 543-60-65",
+  "address": "г. Братск, Полевая ул., д. 24 кв. 106",
+  "createdAt": {
+    "$date": "2026-04-09T10:26:04.336Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d77ef878a53dbbea8e6e10"
+  },
+  "userId": "69d77ee278a53dbbea8e6e0e",
+  "items": [
+    {
+      "productId": "6968eb717dab7e287de4f582",
+      "header": "Палатка туристическая Trek 2",
+      "price": 8500,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d77ef878a53dbbea8e6e11"
+      }
+    }
+  ],
+  "total": 8500,
+  "name": "test",
+  "phone": "+7 (657) 908-76-45",
+  "address": "г. Балаково, Южная ул., д. 20 кв. 176",
+  "createdAt": {
+    "$date": "2026-04-09T10:27:04.067Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d77f0a78a53dbbea8e6e39"
+  },
+  "userId": "69d77ee278a53dbbea8e6e0e",
+  "items": [
+    {
+      "productId": "6968eb717dab7e287de4f58a",
+      "header": "Шезлонг туристический Relax",
+      "price": 3200,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d77f0a78a53dbbea8e6e3a"
+      }
+    },
+    {
+      "productId": "6968eb717dab7e287de4f588",
+      "header": "Стул складной CampChair",
+      "price": 1450,
+      "qty": 1,
+      "_id": {
+        "$oid": "69d77f0a78a53dbbea8e6e3b"
+      }
+    }
+  ],
+  "total": 4650,
+  "name": "test",
+  "phone": "+7 (657) 908-76-45",
+  "address": "г. Балаково, Южная ул., д. 20 кв. 176",
+  "createdAt": {
+    "$date": "2026-04-09T10:27:22.311Z"
+  },
+  "__v": 0
+}]

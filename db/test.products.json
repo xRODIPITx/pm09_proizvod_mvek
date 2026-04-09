@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f582"
+  },
+  "header": "Палатка туристическая Trek 2",
+  "price": 8500,
+  "category": "Палатки",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f583"
+  },
+  "header": "Палатка кемпинговая SummerFamily 4",
+  "price": 15900,
+  "category": "Палатки",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f584"
+  },
+  "header": "Палатка сверхлегкая SoloLight 1",
+  "price": 11200,
+  "category": "Палатки",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f585"
+  },
+  "header": "Спальный мешок Arctic-10",
+  "price": 3400,
+  "category": "Спальные мешки и коврики",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f586"
+  },
+  "header": "Спальный мешок Summer+5",
+  "price": 2200,
+  "category": "Спальные мешки и коврики",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f587"
+  },
+  "header": "Каремат туристический складной",
+  "price": 900,
+  "category": "Спальные мешки и коврики",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f588"
+  },
+  "header": "Стул складной CampChair",
+  "price": 1450,
+  "category": "Туристическая мебель",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f589"
+  },
+  "header": "Стол складной CampTable",
+  "price": 4300,
+  "category": "Туристическая мебель",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f58a"
+  },
+  "header": "Шезлонг туристический Relax",
+  "price": 3200,
+  "category": "Туристическая мебель",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f58b"
+  },
+  "header": "Котелок алюминиевый 1.5л",
+  "price": 650,
+  "category": "Посуда и кухонные принадлежности",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f58c"
+  },
+  "header": "Набор туриста: тарелка/кружка/ложка/вилка",
+  "price": 890,
+  "category": "Посуда и кухонные принадлежности",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f58d"
+  },
+  "header": "Горелка газовая MiniCook",
+  "price": 1900,
+  "category": "Посуда и кухонные принадлежности",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f58e"
+  },
+  "header": "Мангал складной SteelFold",
+  "price": 2100,
+  "category": "Грили и мангалы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f58f"
+  },
+  "header": "Гриль угольный RoundGrill",
+  "price": 4500,
+  "category": "Грили и мангалы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f590"
+  },
+  "header": "Шампуры стальные 6шт",
+  "price": 700,
+  "category": "Грили и мангалы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f591"
+  },
+  "header": "Термос стальной 1л",
+  "price": 1800,
+  "category": "Питьевые системы и термосы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f592"
+  },
+  "header": "Бутылка спортивная 0.75л",
+  "price": 550,
+  "category": "Питьевые системы и термосы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f593"
+  },
+  "header": "Гидратор 2л",
+  "price": 1300,
+  "category": "Питьевые системы и термосы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f594"
+  },
+  "header": "Рюкзак трекинговый Trail35",
+  "price": 5400,
+  "category": "Рюкзаки и сумки",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f595"
+  },
+  "header": "Сумка холодильник 20л",
+  "price": 1600,
+  "category": "Рюкзаки и сумки",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f596"
+  },
+  "header": "Рюкзак городской Daily20",
+  "price": 2200,
+  "category": "Рюкзаки и сумки",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f597"
+  },
+  "header": "Тент защитный 3x3м",
+  "price": 1800,
+  "category": "Тенты и навесы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f598"
+  },
+  "header": "Навес для кемпинга FamilyShade",
+  "price": 6400,
+  "category": "Тенты и навесы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f599"
+  },
+  "header": "Тент универсальный 4x6м",
+  "price": 3200,
+  "category": "Тенты и навесы",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f59a"
+  },
+  "header": "Розжиг для костра био",
+  "price": 350,
+  "category": "Аксессуары для костра",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f59b"
+  },
+  "header": "Набор для костра (кремень + трут)",
+  "price": 890,
+  "category": "Аксессуары для костра",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f59c"
+  },
+  "header": "Перчатки термостойкие FireProtect",
+  "price": 1200,
+  "category": "Аксессуары для костра",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f59d"
+  },
+  "header": "Средство от комаров Aerospray",
+  "price": 420,
+  "category": "Защитные средства",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f59e"
+  },
+  "header": "Крем от солнца SPF50",
+  "price": 650,
+  "category": "Защитные средства",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+},
+{
+  "_id": {
+    "$oid": "6968eb717dab7e287de4f59f"
+  },
+  "header": "Сетка антимоскитная для лица",
+  "price": 300,
+  "category": "Защитные средства",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin pellentesque turpis, maximus malesuada dolor rutrum eget. Maecenas volutpat sapien eu elit interdum auctor. Duis at facilisis dolor, ac faucibus ligula. Morbi rhoncus ex vitae sapien volutpat, laoreet pharetra nibh ultrices. Praesent vitae ultricies neque, id congue diam. Donec et porttitor massa, id consectetur massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus quis sodales orci. Curabitur eget nisi placerat, iaculis dui vel, molestie urna. Nunc ac sollicitudin neque, a eleifend est. Aenean non blandit lacus. Curabitur a turpis ut dolor vehicula accumsan non at quam. Curabitur sagittis lacus blandit, aliquam justo at, eleifend massa. Vestibulum aliquam sagittis sem, eu rutrum ante porta vitae.",
+  "image": "/images/placeholder.png"
+}]
