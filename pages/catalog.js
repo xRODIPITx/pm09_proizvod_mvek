@@ -67,6 +67,10 @@ export default function Main({
         comparison = a.price - b.price;
       } else if (criterion === "header") {
         comparison = a.header.localeCompare(b.header);
+      } else if (criterion === "rating") {
+        const aRating = ratings[a._id] || 0;
+        const bRating = ratings[b._id] || 0;
+        comparison = aRating - bRating;
       }
 
       return direction === "asc" ? comparison : -comparison;
